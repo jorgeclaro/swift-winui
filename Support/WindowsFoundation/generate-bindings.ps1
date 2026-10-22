@@ -1,4 +1,4 @@
-function Get-SwiftWinRTVersion {
+﻿function Get-SwiftWinRTVersion {
     $Projections = Get-Content -Path $PSScriptRoot\projections.json | ConvertFrom-Json
     return $Projections."swift-winrt"
 }
@@ -40,7 +40,7 @@ function Restore-Nuget {
         New-Item -ItemType Directory -Path "$PSScriptRoot\.packages" | Out-Null
     }
     $PackagesConfigPath = Join-Path $PSScriptRoot ".packages\packages.config"
-    $PackagesConfigContent | Out-File -FilePath $PackagesConfigPath
+    $PackagesConfigContent | Out-File -FilePath $PackagesConfigPath -Encoding ascii
 
     & $NugetDownloadPath restore $PackagesConfigPath -PackagesDirectory $PackagesDir | Out-Null
     if ($LASTEXITCODE -ne 0) {
@@ -116,7 +116,7 @@ function Invoke-SwiftWinRT() {
     }
     # write rsp params to file
     $RspFile = Join-Path $PSScriptRoot "swift-winrt.rsp"
-    $RspParams | Out-File -FilePath $RspFile
+    $RspParams | Out-File -FilePath $RspFile -Encoding ascii
     & $PackagesDir\TheBrowserCompany.SwiftWinRT.$SwiftWinRTVersion\bin\swiftwinrt.exe "@$RspFile"
 
     if ($LASTEXITCODE -ne 0) {

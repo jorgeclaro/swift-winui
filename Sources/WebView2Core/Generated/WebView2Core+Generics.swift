@@ -21,18 +21,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanVTable: __x_AB
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<Bool>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1_booleanWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<Bool>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1_booleanWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanBridge>
-internal class AsyncOperationCompletedHandlerBool: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerBool: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1_boolean }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<Bool>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<Bool>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1_booleanWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1_boolean.self) { pThis in
@@ -51,7 +53,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanBridge : Win
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -72,18 +74,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__C
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2BrowserExtension?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2BrowserExtension?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge>
-internal class AsyncOperationCompletedHandlerCoreWebView2BrowserExtension: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerCoreWebView2BrowserExtension: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2BrowserExtension?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2BrowserExtension?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
@@ -102,7 +106,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft_
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -123,18 +127,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__C
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2CompositionController?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2CompositionController?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerBridge>
-internal class AsyncOperationCompletedHandlerCoreWebView2CompositionController: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerCoreWebView2CompositionController: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2CompositionController?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2CompositionController?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController.self) { pThis in
@@ -153,7 +159,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft_
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -174,18 +180,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__C
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Controller?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Controller?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerBridge>
-internal class AsyncOperationCompletedHandlerCoreWebView2Controller: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerCoreWebView2Controller: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Controller?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Controller?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller.self) { pThis in
@@ -204,7 +212,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft_
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -225,18 +233,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__C
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Environment?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Environment?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentBridge>
-internal class AsyncOperationCompletedHandlerCoreWebView2Environment: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerCoreWebView2Environment: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Environment?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2Environment?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment.self) { pThis in
@@ -255,7 +265,60 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft_
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult: WindowsFoundation.IID {
+    .init(Data1: 0x9144286b, Data2: 0x0ffd, Data3: 0x5997, Data4: ( 0xb0,0xf6,0x0a,0xd6,0x8e,0x66,0x4d,0x97 ))// 9144286b-0ffd-5997-b0f6-0ad68e664d97
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultVTable: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2ExecuteScriptResult?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultBridge>
+public class AsyncOperationCompletedHandlerCoreWebView2ExecuteScriptResult: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult }
+
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2ExecuteScriptResult?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+        let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper(asyncInfo)
+        let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _asyncInfo, asyncStatus))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<WebView2Core.CoreWebView2ExecuteScriptResult?>
+    internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult
+    internal typealias SwiftABI = WebView2Core.AsyncOperationCompletedHandlerCoreWebView2ExecuteScriptResult
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (asyncInfo, asyncStatus) in
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -276,18 +339,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__C
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2PrintStatus>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2PrintStatus>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusBridge>
-internal class AsyncOperationCompletedHandlerCoreWebView2PrintStatus: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerCoreWebView2PrintStatus: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatus }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2PrintStatus>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2PrintStatus>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatus.self) { pThis in
@@ -306,7 +371,60 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft_
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult: WindowsFoundation.IID {
+    .init(Data1: 0xcf10fa2f, Data2: 0xb213, Data3: 0x5b6c, Data4: ( 0xb5,0x8b,0x2d,0x53,0x3a,0x87,0x6d,0x3e ))// cf10fa2f-b213-5b6c-b58b-2d533a876d3e
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultVTable: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2SaveAsUIResult>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultBridge>
+public class AsyncOperationCompletedHandlerCoreWebView2SaveAsUIResult: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult }
+
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2SaveAsUIResult>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+        let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper(asyncInfo)
+        let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _asyncInfo, asyncStatus))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<WebView2Core.CoreWebView2SaveAsUIResult>
+    internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult
+    internal typealias SwiftABI = WebView2Core.AsyncOperationCompletedHandlerCoreWebView2SaveAsUIResult
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (asyncInfo, asyncStatus) in
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -327,18 +445,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGVTable: __x_AB
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<String>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1_HSTRINGWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<String>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1_HSTRINGWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGBridge>
-internal class AsyncOperationCompletedHandlerString: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerString: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRING }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<String>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<String>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1_HSTRINGWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRING.self) { pThis in
@@ -357,7 +477,60 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGBridge : Win
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension: WindowsFoundation.IID {
+    .init(Data1: 0x56c79fca, Data2: 0xa4d3, Data3: 0x5094, Data4: ( 0x89,0xf5,0x4e,0x7d,0xa4,0x06,0xff,0x23 ))// 56c79fca-a4d3-5094-89f5-4e7da406ff23
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge>
+public class AsyncOperationCompletedHandlerIVectorViewCoreWebView2BrowserExtension: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension }
+
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+        let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper(asyncInfo)
+        let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _asyncInfo, asyncStatus))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?>
+    internal typealias CABI = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension
+    internal typealias SwiftABI = WebView2Core.AsyncOperationCompletedHandlerIVectorViewCoreWebView2BrowserExtension
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (asyncInfo, asyncStatus) in
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -378,18 +551,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorVi
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieBridge>
-internal class AsyncOperationCompletedHandlerIVectorViewCoreWebView2Cookie: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerIVectorViewCoreWebView2Cookie: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
@@ -408,7 +583,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVector
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -429,18 +604,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorVi
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingBridge>
-internal class AsyncOperationCompletedHandlerIVectorViewCoreWebView2PermissionSetting: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerIVectorViewCoreWebView2PermissionSetting: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
@@ -459,7 +636,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVector
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -480,18 +657,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorVi
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoBridge>
-internal class AsyncOperationCompletedHandlerIVectorViewCoreWebView2ProcessExtendedInfo: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerIVectorViewCoreWebView2ProcessExtendedInfo: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
@@ -510,7 +689,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVector
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -531,18 +710,20 @@ internal var __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CSt
     AddRef: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper.addRef($0) },
     Release: { __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.AnyIRandomAccessStream?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper.unwrapFrom(abi: ComPtr($1))
-        let asyncStatus: WindowsFoundation.AsyncStatus = $2
-        __unwrapped__instance(asyncInfo, asyncStatus)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.AnyIRandomAccessStream?>? = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper.unwrapFrom(abi: ComPtr($1))
+            let asyncStatus: WindowsFoundation.AsyncStatus = $2
+            try __unwrapped__instance(asyncInfo, asyncStatus)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamBridge>
-internal class AsyncOperationCompletedHandlerIRandomAccessStream: WindowsFoundation.IUnknown {
+public class AsyncOperationCompletedHandlerIRandomAccessStream: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStream }
 
-    internal func InvokeImpl(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.AnyIRandomAccessStream?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
+    open func Invoke(_ asyncInfo: WindowsFoundation.AnyIAsyncOperation<UWP.AnyIRandomAccessStream?>?, _ asyncStatus: WindowsFoundation.AsyncStatus) throws {
         let asyncInfoWrapper = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper(asyncInfo)
         let _asyncInfo = try! asyncInfoWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStream.self) { pThis in
@@ -561,7 +742,7 @@ internal class __x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__C
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (asyncInfo, asyncStatus) in
-            try! _default.InvokeImpl(asyncInfo, asyncStatus)
+            try _default.Invoke(asyncInfo, asyncStatus)
         }
         return handler
     }
@@ -607,10 +788,10 @@ internal var __x_ABI_C__FIIterable_1_IInspectableVTable: __x_ABI_C__FIIterable_1
     }
 )
 typealias __x_ABI_C__FIIterable_1_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1_IInspectableBridge>
-internal class IIterableAny: WindowsFoundation.IInspectable {
+public class IIterableAny: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1_IInspectable }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<Any?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<Any?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -647,7 +828,94 @@ fileprivate class __x_ABI_C__FIIterable_1_IInspectableImpl : IIterable, AbiInter
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<Any?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension: WindowsFoundation.IID {
+    .init(Data1: 0xece788fd, Data2: 0xd2f2, Data3: 0x5e83, Data4: ( 0x83,0xb3,0x35,0x8b,0xae,0x5b,0xf8,0x72 ))// ece788fd-d2f2-5e83-83b3-358bae5bf872
+}
+
+internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<Microsoft.Web.WebView2.Core.CoreWebView2BrowserExtension>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge>
+public class IIterableCoreWebView2BrowserExtension: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension }
+
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2BrowserExtension?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension
+    internal typealias SwiftABI = IIterableCoreWebView2BrowserExtension
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<WebView2Core.CoreWebView2BrowserExtension?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl : IIterable, AbiInterfaceImpl {
+    typealias T = WebView2Core.CoreWebView2BrowserExtension?
+    typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2BrowserExtension?>? {
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -694,10 +962,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateBridge>
-internal class IIterableCoreWebView2ClientCertificate: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2ClientCertificate: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ClientCertificate?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ClientCertificate?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -734,7 +1002,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ClientCertificate?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -781,10 +1049,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemBridge>
-internal class IIterableCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ContextMenuItem?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ContextMenuItem?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -821,7 +1089,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ContextMenuItem?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -868,10 +1136,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieBridge>
-internal class IIterableCoreWebView2Cookie: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2Cookie: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2Cookie?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2Cookie?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -908,7 +1176,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2Cookie?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -955,10 +1223,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationBridge>
-internal class IIterableCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -995,7 +1263,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1042,10 +1310,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoBridge>
-internal class IIterableCoreWebView2FrameInfo: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2FrameInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2FrameInfo?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2FrameInfo?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -1082,7 +1350,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2FrameInfo?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1129,10 +1397,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingBridge>
-internal class IIterableCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2PermissionSetting?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2PermissionSetting?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -1169,7 +1437,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2PermissionSetting?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1216,10 +1484,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoBridge>
-internal class IIterableCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessExtendedInfo?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessExtendedInfo?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -1256,7 +1524,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessExtendedInfo?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1303,10 +1571,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoBridge>
-internal class IIterableCoreWebView2ProcessInfo: WindowsFoundation.IInspectable {
+public class IIterableCoreWebView2ProcessInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessInfo?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessInfo?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -1343,7 +1611,7 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessInfo?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1390,10 +1658,10 @@ internal var __x_ABI_C__FIIterable_1_HSTRINGVTable: __x_ABI_C__FIIterable_1_HSTR
     }
 )
 typealias __x_ABI_C__FIIterable_1_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1_HSTRINGBridge>
-internal class IIterableString: WindowsFoundation.IInspectable {
+public class IIterableString: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1_HSTRING }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<String>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<String>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -1430,7 +1698,94 @@ fileprivate class __x_ABI_C__FIIterable_1_HSTRINGImpl : IIterable, AbiInterfaceI
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<String>? {
-        try! _default.FirstImpl()
+        try! _default.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterable_1_UINT64: WindowsFoundation.IID {
+    .init(Data1: 0x4b3a3229, Data2: 0x7995, Data3: 0x5f3c, Data4: ( 0xb2,0x48,0x6c,0x1f,0x7e,0x66,0x4f,0x01 ))// 4b3a3229-7995-5f3c-b248-6c1f7e664f01
+}
+
+internal var __x_ABI_C__FIIterable_1_UINT64VTable: __x_ABI_C__FIIterable_1_UINT64Vtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1_UINT64Wrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1_UINT64Wrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1_UINT64Wrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIIterable_1_UINT64Wrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<UInt64>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = WebView2Core.__x_ABI_C__FIIterator_1_UINT64Wrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1_UINT64Wrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1_UINT64Bridge>
+public class IIterableUInt64: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1_UINT64 }
+
+    open func First() throws -> WindowsFoundation.AnyIIterator<UInt64>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1_UINT64.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return WebView2Core.__x_ABI_C__FIIterator_1_UINT64Wrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1_UINT64Bridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1_UINT64
+    internal typealias SwiftABI = IIterableUInt64
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<UInt64>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1_UINT64Impl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1_UINT64VTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1_UINT64Impl : IIterable, AbiInterfaceImpl {
+    typealias T = UInt64
+    typealias Bridge = __x_ABI_C__FIIterable_1_UINT64Bridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<UInt64>? {
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1477,10 +1832,10 @@ internal var __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING
     }
 )
 typealias __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-internal class IIterableIKeyValuePairString_String: WindowsFoundation.IInspectable {
+public class IIterableIKeyValuePairString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
-    internal func FirstImpl() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
+    open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
@@ -1517,7 +1872,94 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HS
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.AnyIKeyValuePair<String, String>?>? {
-        try! _default.FirstImpl()
+        try! _default.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRect: WindowsFoundation.IID {
+    .init(Data1: 0xf7a49934, Data2: 0x2bcd, Data3: 0x50b0, Data4: ( 0xa1,0x0a,0x75,0x00,0x45,0xd9,0x55,0x78 ))// f7a49934-2bcd-50b0-a10a-750045d95578
+}
+
+internal var __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectVTable: __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<Windows.Foundation.Rect>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectBridge>
+public class IIterableRect: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRect }
+
+    open func First() throws -> WindowsFoundation.AnyIIterator<WindowsFoundation.Rect>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRect
+    internal typealias SwiftABI = IIterableRect
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<WindowsFoundation.Rect>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectImpl : IIterable, AbiInterfaceImpl {
+    typealias T = WindowsFoundation.Rect
+    typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.Rect>? {
+        try! _default.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1577,13 +2019,20 @@ internal var __x_ABI_C__FIIterator_1_IInspectableVTable: __x_ABI_C__FIIterator_1
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [Any?] = .from(abiBridge: __IMPL_.AnyBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_.AnyBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1_IInspectableBridge>
-internal class IIteratorAny: WindowsFoundation.IInspectable {
+public class IIteratorAny: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1_IInspectable }
 
-    internal func get_CurrentImpl() throws -> Any? {
+    open func get_Current() throws -> Any? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
@@ -1592,7 +2041,7 @@ internal class IIteratorAny: WindowsFoundation.IInspectable {
         return __ABI_.AnyWrapper.unwrapFrom(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -1600,12 +2049,23 @@ internal class IIteratorAny: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [Any?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_.AnyBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1_IInspectable.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_.AnyBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -1636,17 +2096,173 @@ fileprivate class __x_ABI_C__FIIterator_1_IInspectableImpl : IIterator, AbiInter
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [Any?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : Any? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension: WindowsFoundation.IID {
+    .init(Data1: 0x1d1fee79, Data2: 0xf134, Data3: 0x5ee9, Data4: ( 0x9f,0x33,0xec,0x64,0x72,0x20,0xcf,0x85 ))// 1d1fee79-f134-5ee9-9f33-ec647220cf85
+}
+
+internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<Microsoft.Web.WebView2.Core.CoreWebView2BrowserExtension>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        result?.copyTo($1)
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2BrowserExtension?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge>
+public class IIteratorCoreWebView2BrowserExtension: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension }
+
+    open func get_Current() throws -> WebView2Core.CoreWebView2BrowserExtension? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
+            }
+        }
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.from(abi: result)
+    }
+
+    open func get_HasCurrent() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func MoveNext() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2BrowserExtension?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self, abi: _items)
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension
+    internal typealias SwiftABI = IIteratorCoreWebView2BrowserExtension
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2BrowserExtension?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl : IIterator, AbiInterfaceImpl {
+    typealias T = WebView2Core.CoreWebView2BrowserExtension?
+    typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2BrowserExtension?]) -> UInt32 {
+        try! _default.GetMany(&items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : WebView2Core.CoreWebView2BrowserExtension? {
+        get { try! _default.get_Current() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1705,22 +2321,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2ClientCertificate?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateBridge>
-internal class IIteratorCoreWebView2ClientCertificate: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2ClientCertificate: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2ClientCertificate? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2ClientCertificate? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -1728,12 +2351,23 @@ internal class IIteratorCoreWebView2ClientCertificate: WindowsFoundation.IInspec
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2ClientCertificate?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -1764,17 +2398,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2ClientCertificate?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2ClientCertificate? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1833,22 +2472,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2ContextMenuItem?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemBridge>
-internal class IIteratorCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2ContextMenuItem? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2ContextMenuItem? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -1856,12 +2502,23 @@ internal class IIteratorCoreWebView2ContextMenuItem: WindowsFoundation.IInspecta
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2ContextMenuItem?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -1892,17 +2549,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2ContextMenuItem?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2ContextMenuItem? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -1961,22 +2623,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2Cookie?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieBridge>
-internal class IIteratorCoreWebView2Cookie: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2Cookie: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2Cookie? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2Cookie? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -1984,12 +2653,23 @@ internal class IIteratorCoreWebView2Cookie: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2Cookie?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -2020,17 +2700,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2Cookie?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2Cookie? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2089,22 +2774,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2CustomSchemeRegistration?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationBridge>
-internal class IIteratorCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -2112,12 +2804,23 @@ internal class IIteratorCoreWebView2CustomSchemeRegistration: WindowsFoundation.
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2CustomSchemeRegistration?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -2148,17 +2851,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2CustomSchemeRegistration?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2CustomSchemeRegistration? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2217,22 +2925,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2FrameInfo?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoBridge>
-internal class IIteratorCoreWebView2FrameInfo: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2FrameInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2FrameInfo? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2FrameInfo? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -2240,12 +2955,23 @@ internal class IIteratorCoreWebView2FrameInfo: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2FrameInfo?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -2276,17 +3002,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2FrameInfo?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2FrameInfo? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2345,22 +3076,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2PermissionSetting?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingBridge>
-internal class IIteratorCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2PermissionSetting? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2PermissionSetting? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -2368,12 +3106,23 @@ internal class IIteratorCoreWebView2PermissionSetting: WindowsFoundation.IInspec
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2PermissionSetting?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -2404,17 +3153,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2PermissionSetting?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2PermissionSetting? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2473,22 +3227,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2ProcessExtendedInfo?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoBridge>
-internal class IIteratorCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2ProcessExtendedInfo? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2ProcessExtendedInfo? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -2496,12 +3257,23 @@ internal class IIteratorCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInsp
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2ProcessExtendedInfo?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -2532,17 +3304,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2ProcessExtendedInfo?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2ProcessExtendedInfo? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2601,22 +3378,29 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore_
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WebView2Core.CoreWebView2ProcessInfo?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoBridge>
-internal class IIteratorCoreWebView2ProcessInfo: WindowsFoundation.IInspectable {
+public class IIteratorCoreWebView2ProcessInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo }
 
-    internal func get_CurrentImpl() throws -> WebView2Core.CoreWebView2ProcessInfo? {
+    open func get_Current() throws -> WebView2Core.CoreWebView2ProcessInfo? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.from(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -2624,12 +3408,23 @@ internal class IIteratorCoreWebView2ProcessInfo: WindowsFoundation.IInspectable 
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WebView2Core.CoreWebView2ProcessInfo?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -2660,17 +3455,22 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CWeb__CWebView2__C
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WebView2Core.CoreWebView2ProcessInfo?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WebView2Core.CoreWebView2ProcessInfo? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2729,13 +3529,22 @@ internal var __x_ABI_C__FIIterator_1_HSTRINGVTable: __x_ABI_C__FIIterator_1_HSTR
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [String] = .from(abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        do {
+            try items.fill(abi: $2)
+        } catch { return failWith(error: error) }
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1_HSTRINGBridge>
-internal class IIteratorString: WindowsFoundation.IInspectable {
+public class IIteratorString: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1_HSTRING }
 
-    internal func get_CurrentImpl() throws -> String {
+    open func get_Current() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIIterator_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &result))
@@ -2743,7 +3552,7 @@ internal class IIteratorString: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -2751,12 +3560,23 @@ internal class IIteratorString: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [String]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1_HSTRING.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abi: _items)
+        }
+        return result
     }
 
 }
@@ -2787,17 +3607,171 @@ fileprivate class __x_ABI_C__FIIterator_1_HSTRINGImpl : IIterator, AbiInterfaceI
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [String]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : String {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterator_1_UINT64: WindowsFoundation.IID {
+    .init(Data1: 0xc473ed96, Data2: 0x76e3, Data3: 0x5ff2, Data4: ( 0x94,0x35,0x47,0xfe,0xeb,0xfe,0x95,0x39 ))// c473ed96-76e3-5ff2-9435-47feebfe9539
+}
+
+internal var __x_ABI_C__FIIterator_1_UINT64VTable: __x_ABI_C__FIIterator_1_UINT64Vtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1_UINT64Wrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1_UINT64Wrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1_UINT64Wrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIIterator_1_UINT64Wrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<UInt64>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [UInt64] = .from(abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2)
+        $3?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterator_1_UINT64Wrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1_UINT64Bridge>
+public class IIteratorUInt64: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1_UINT64 }
+
+    open func get_Current() throws -> UInt64 {
+        var result: UINT64 = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1_UINT64.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &result))
+        }
+        return result
+    }
+
+    open func get_HasCurrent() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1_UINT64.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func MoveNext() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1_UINT64.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [UInt64]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1_UINT64.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1_UINT64Bridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1_UINT64
+    internal typealias SwiftABI = IIteratorUInt64
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<UInt64>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1_UINT64Impl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1_UINT64VTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1_UINT64Impl : IIterator, AbiInterfaceImpl {
+    typealias T = UInt64
+    typealias Bridge = __x_ABI_C__FIIterator_1_UINT64Bridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [UInt64]) -> UInt32 {
+        try! _default.GetMany(&items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : UInt64 {
+        get { try! _default.get_Current() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2857,13 +3831,20 @@ internal var __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING
         return S_OK
     },
 
-    GetMany: { _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WindowsFoundation.AnyIKeyValuePair<String, String>?] = .from(abiBridge: WebView2Core.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: WebView2Core.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-internal class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable {
+public class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
-    internal func get_CurrentImpl() throws -> WindowsFoundation.AnyIKeyValuePair<String, String>? {
+    open func get_Current() throws -> WindowsFoundation.AnyIKeyValuePair<String, String>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
@@ -2872,7 +3853,7 @@ internal class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectab
         return WebView2Core.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper.unwrapFrom(abi: result)
     }
 
-    internal func get_HasCurrentImpl() throws -> Bool {
+    open func get_HasCurrent() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
@@ -2880,12 +3861,23 @@ internal class IIteratorIKeyValuePairString_String: WindowsFoundation.IInspectab
         return .init(from: result)
     }
 
-    internal func MoveNextImpl() throws -> Bool {
+    open func MoveNext() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, String>?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: WebView2Core.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: WebView2Core.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -2916,17 +3908,174 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_C__FIKeyValuePair_2_HSTRING_HS
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     fileprivate func moveNext() -> Bool {
-        try! _default.MoveNextImpl()
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WindowsFoundation.AnyIKeyValuePair<String, String>?]) -> UInt32 {
+        try! _default.GetMany(&items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WindowsFoundation.AnyIKeyValuePair<String, String>? {
-        get { try! _default.get_CurrentImpl() }
+        get { try! _default.get_Current() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
     fileprivate var hasCurrent : Bool {
-        get { try! _default.get_HasCurrentImpl() }
+        get { try! _default.get_HasCurrent() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRect: WindowsFoundation.IID {
+    .init(Data1: 0x3487aa9d, Data2: 0x505f, Data3: 0x550e, Data4: ( 0x87,0x4e,0x5b,0x61,0x94,0xc6,0x18,0xeb ))// 3487aa9d-505f-550e-874e-5b6194c618eb
+}
+
+internal var __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectVTable: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<Windows.Foundation.Rect>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        $1?.initialize(to: .from(swift: result))
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WindowsFoundation.Rect] = .from(abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        do {
+            try items.fill(abi: $2)
+        } catch { return failWith(error: error) }
+        $3?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectBridge>
+public class IIteratorRect: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRect }
+
+    open func get_Current() throws -> WindowsFoundation.Rect {
+        var result: __x_ABI_CWindows_CFoundation_CRect = .init()
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &result))
+        }
+        return .from(abi: result)
+    }
+
+    open func get_HasCurrent() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func MoveNext() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WindowsFoundation.Rect]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abi: _items)
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRect
+    internal typealias SwiftABI = IIteratorRect
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<WindowsFoundation.Rect>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectImpl : IIterator, AbiInterfaceImpl {
+    typealias T = WindowsFoundation.Rect
+    typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_CWindows__CFoundation__CRectBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WindowsFoundation.Rect]) -> UInt32 {
+        try! _default.GetMany(&items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : WindowsFoundation.Rect {
+        get { try! _default.get_Current() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrent() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -2979,10 +4128,10 @@ internal var __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGVTable: __x_ABI_C__FIKey
     }
 )
 typealias __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGBridge>
-internal class IKeyValuePairString_String: WindowsFoundation.IInspectable {
+public class IKeyValuePairString_String: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING }
 
-    internal func get_KeyImpl() throws -> String {
+    open func get_Key() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Key(pThis, &result))
@@ -2990,7 +4139,7 @@ internal class IKeyValuePairString_String: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func get_ValueImpl() throws -> String {
+    open func get_Value() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Value(pThis, &result))
@@ -3027,12 +4176,12 @@ fileprivate class __x_ABI_C__FIKeyValuePair_2_HSTRING_HSTRINGImpl : IKeyValuePai
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.key)
     fileprivate var key : String {
-        get { try! _default.get_KeyImpl() }
+        get { try! _default.get_Key() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ikeyvaluepair-2.value)
     fileprivate var value : String {
-        get { try! _default.get_ValueImpl() }
+        get { try! _default.get_Value() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -3097,13 +4246,21 @@ internal var __x_ABI_C__FIVectorView_1_IInspectableVTable: __x_ABI_C__FIVectorVi
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [Any?] = .from(abiBridge: __IMPL_.AnyBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_.AnyBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1_IInspectableBridge>
-internal class IVectorViewAny: WindowsFoundation.IInspectable {
+public class IVectorViewAny: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1_IInspectable }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> Any? {
+    open func GetAt(_ index: UInt32) throws -> Any? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1_IInspectable.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
@@ -3112,7 +4269,7 @@ internal class IVectorViewAny: WindowsFoundation.IInspectable {
         return __ABI_.AnyWrapper.unwrapFrom(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1_IInspectable.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -3120,7 +4277,7 @@ internal class IVectorViewAny: WindowsFoundation.IInspectable {
         return result
     }
 
-    internal func IndexOfImpl(_ value: Any?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: Any?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         let valueWrapper = __ABI_.AnyWrapper(value)
         let _value = try! valueWrapper?.toABI { $0 }
@@ -3128,6 +4285,17 @@ internal class IVectorViewAny: WindowsFoundation.IInspectable {
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, _value, &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [Any?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_.AnyBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1_IInspectable.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_.AnyBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -3179,23 +4347,212 @@ fileprivate class __x_ABI_C__FIVectorView_1_IInspectableImpl : IVectorView, AbiI
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> Any? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: Any?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [Any?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableAny! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<Any?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension: WindowsFoundation.IID {
+    .init(Data1: 0x00ecd11f, Data2: 0x65a5, Data3: 0x59b6, Data4: ( 0xac,0xcd,0xa3,0x8f,0x81,0xb9,0xc2,0x42 ))// 00ecd11f-65a5-59b6-accd-a38f81b9c242
+}
+
+internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.IID
+        iids[3] = WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVectorView`1<Microsoft.Web.WebView2.Core.CoreWebView2BrowserExtension>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        result?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WebView2Core.CoreWebView2BrowserExtension? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.from(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2BrowserExtension?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge>
+public class IVectorViewCoreWebView2BrowserExtension: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension }
+
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2BrowserExtension? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.from(abi: result)
+    }
+
+    open func get_Size() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    open func IndexOf(_ value: WebView2Core.CoreWebView2BrowserExtension?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2BrowserExtension?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.self, abi: _items)
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension
+    internal typealias SwiftABI = IVectorViewCoreWebView2BrowserExtension
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl : IVectorView, AbiInterfaceImpl {
+    typealias T = WebView2Core.CoreWebView2BrowserExtension?
+    typealias Bridge = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+    }
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2BrowserExtension? {
+        try! _default.GetAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
+    fileprivate func indexOf(_ value: WebView2Core.CoreWebView2BrowserExtension?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2BrowserExtension?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_Size() }
+    }
+
+    private lazy var _IIterable: IIterableCoreWebView2BrowserExtension! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2BrowserExtension?>? {
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -3251,7 +4608,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2ClientCertificate? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2ClientCertificate? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -3259,22 +4616,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2ClientCertificate?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateBridge>
-internal class IVectorViewCoreWebView2ClientCertificate: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2ClientCertificate: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2ClientCertificate? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2ClientCertificate? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -3282,12 +4647,23 @@ internal class IVectorViewCoreWebView2ClientCertificate: WindowsFoundation.IInsp
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2ClientCertificate?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2ClientCertificate?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ClientCertificate?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificate.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -3339,23 +4715,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2ClientCertificate? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2ClientCertificate?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ClientCertificate?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2ClientCertificate! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ClientCertificate?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -3411,7 +4792,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2ContextMenuItem? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2ContextMenuItem? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -3419,22 +4800,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2ContextMenuItem?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemBridge>
-internal class IVectorViewCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2ContextMenuItem? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2ContextMenuItem? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -3442,12 +4831,23 @@ internal class IVectorViewCoreWebView2ContextMenuItem: WindowsFoundation.IInspec
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2ContextMenuItem?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2ContextMenuItem?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ContextMenuItem?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -3499,23 +4899,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2ContextMenuItem? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2ContextMenuItem?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ContextMenuItem?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2ContextMenuItem! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ContextMenuItem?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -3571,7 +4976,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2Cookie? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2Cookie? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -3579,22 +4984,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2Cookie?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieBridge>
-internal class IVectorViewCoreWebView2Cookie: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2Cookie: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2Cookie? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2Cookie? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -3602,12 +5015,23 @@ internal class IVectorViewCoreWebView2Cookie: WindowsFoundation.IInspectable {
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2Cookie?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2Cookie?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2Cookie?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CookieBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -3659,23 +5083,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2Cookie? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2Cookie?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2Cookie?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2Cookie! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2Cookie?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -3731,7 +5160,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -3739,22 +5168,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2CustomSchemeRegistration?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationBridge>
-internal class IVectorViewCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -3762,12 +5199,23 @@ internal class IVectorViewCoreWebView2CustomSchemeRegistration: WindowsFoundatio
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2CustomSchemeRegistration?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -3819,23 +5267,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2CustomSchemeRegistration?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2CustomSchemeRegistration! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -3891,7 +5344,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2FrameInfo? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2FrameInfo? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -3899,22 +5352,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2FrameInfo?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfoBridge>
-internal class IVectorViewCoreWebView2FrameInfo: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2FrameInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2FrameInfo? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2FrameInfo? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -3922,12 +5383,23 @@ internal class IVectorViewCoreWebView2FrameInfo: WindowsFoundation.IInspectable 
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2FrameInfo?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2FrameInfo?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2FrameInfo?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameInfoBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -3979,23 +5451,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2FrameInfo? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2FrameInfo?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2FrameInfo?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2FrameInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2FrameInfo?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -4051,7 +5528,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2PermissionSetting? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2PermissionSetting? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -4059,22 +5536,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2PermissionSetting?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingBridge>
-internal class IVectorViewCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2PermissionSetting? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2PermissionSetting? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -4082,12 +5567,23 @@ internal class IVectorViewCoreWebView2PermissionSetting: WindowsFoundation.IInsp
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2PermissionSetting?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2PermissionSetting?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2PermissionSetting?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionSettingBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -4139,23 +5635,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2PermissionSetting? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2PermissionSetting?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2PermissionSetting?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2PermissionSetting! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2PermissionSetting?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -4211,7 +5712,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2ProcessExtendedInfo? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2ProcessExtendedInfo? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -4219,22 +5720,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2ProcessExtendedInfo?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoBridge>
-internal class IVectorViewCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2ProcessExtendedInfo? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2ProcessExtendedInfo? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -4242,12 +5751,23 @@ internal class IVectorViewCoreWebView2ProcessExtendedInfo: WindowsFoundation.IIn
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2ProcessExtendedInfo?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2ProcessExtendedInfo?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ProcessExtendedInfo?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessExtendedInfoBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -4299,23 +5819,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2ProcessExtendedInfo? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2ProcessExtendedInfo?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ProcessExtendedInfo?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2ProcessExtendedInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessExtendedInfo?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -4371,7 +5896,7 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2ProcessInfo? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2ProcessInfo? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -4379,22 +5904,30 @@ internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCor
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2ProcessInfo?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfoBridge>
-internal class IVectorViewCoreWebView2ProcessInfo: WindowsFoundation.IInspectable {
+public class IVectorViewCoreWebView2ProcessInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2ProcessInfo? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2ProcessInfo? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -4402,12 +5935,23 @@ internal class IVectorViewCoreWebView2ProcessInfo: WindowsFoundation.IInspectabl
         return result
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2ProcessInfo?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2ProcessInfo?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ProcessInfo?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessInfo.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessInfoBridge.self, abi: _items)
+        }
+        return result
     }
 
 }
@@ -4459,23 +6003,28 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2_
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2ProcessInfo? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2ProcessInfo?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ProcessInfo?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2ProcessInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ProcessInfo?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -4539,13 +6088,23 @@ internal var __x_ABI_C__FIVectorView_1_HSTRINGVTable: __x_ABI_C__FIVectorView_1_
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) }
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [String] = .from(abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        do {
+            try items.fill(abi: $3)
+        } catch { return failWith(error: error) }
+        $4?.initialize(to: result)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVectorView_1_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1_HSTRINGBridge>
-internal class IVectorViewString: WindowsFoundation.IInspectable {
+public class IVectorViewString: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1_HSTRING }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> String {
+    open func GetAt(_ index: UInt32) throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIVectorView_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &result))
@@ -4553,7 +6112,7 @@ internal class IVectorViewString: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVectorView_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -4561,13 +6120,24 @@ internal class IVectorViewString: WindowsFoundation.IInspectable {
         return result
     }
 
-    internal func IndexOfImpl(_ value: String, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: String, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         let _value = try! HString(value)
         _ = try perform(as: __x_ABI_C__FIVectorView_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, _value.get(), &index, &result))
         }
         return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [String]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1_HSTRING.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abi: _items)
+        }
+        return result
     }
 
 }
@@ -4619,23 +6189,395 @@ fileprivate class __x_ABI_C__FIVectorView_1_HSTRINGImpl : IVectorView, AbiInterf
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
     fileprivate func getAt(_ index: UInt32) -> String {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     fileprivate func indexOf(_ value: String, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [String]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableString! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<String>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVectorView_1_UINT64: WindowsFoundation.IID {
+    .init(Data1: 0x23d156c7, Data2: 0x7ef9, Data3: 0x5096, Data4: ( 0xaa,0xba,0x1e,0x6c,0x9a,0xb5,0xce,0xb4 ))// 23d156c7-7ef9-5096-aaba-1e6c9ab5ceb4
+}
+
+internal var __x_ABI_C__FIVectorView_1_UINT64VTable: __x_ABI_C__FIVectorView_1_UINT64Vtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVectorView_1_UINT64Wrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVectorView_1_UINT64Wrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVectorView_1_UINT64Wrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIVectorView_1_UINT64Wrapper.IID
+        iids[3] = WebView2Core.__x_ABI_C__FIIterable_1_UINT64Wrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVectorView`1<UInt64>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        $2?.initialize(to: result)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: UInt64 = $1
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1_UINT64Wrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [UInt64] = .from(abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3)
+        $4?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIVectorView_1_UINT64Wrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1_UINT64Bridge>
+public class IVectorViewUInt64: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1_UINT64 }
+
+    open func GetAt(_ index: UInt32) throws -> UInt64 {
+        var result: UINT64 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1_UINT64.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &result))
+        }
+        return result
+    }
+
+    open func get_Size() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1_UINT64.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    open func IndexOf(_ value: UInt64, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1_UINT64.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, value, &index, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [UInt64]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1_UINT64.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIVectorView_1_UINT64Bridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVectorView_1_UINT64
+    internal typealias SwiftABI = IVectorViewUInt64
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVectorView<UInt64>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVectorView_1_UINT64Impl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVectorView_1_UINT64VTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVectorView_1_UINT64Impl : IVectorView, AbiInterfaceImpl {
+    typealias T = UInt64
+    typealias Bridge = __x_ABI_C__FIVectorView_1_UINT64Bridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+    }
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> UInt64 {
+        try! _default.GetAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
+    fileprivate func indexOf(_ value: UInt64, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [UInt64]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_Size() }
+    }
+
+    private lazy var _IIterable: IIterableUInt64! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<UInt64>? {
+        try! _IIterable.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRect: WindowsFoundation.IID {
+    .init(Data1: 0x0b651ad6, Data2: 0x9755, Data3: 0x5be5, Data4: ( 0x89,0x18,0x6b,0xd6,0x1e,0xed,0x37,0x95 ))// 0b651ad6-9755-5be5-8918-6bd61eed3795
+}
+
+internal var __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectVTable: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.IID
+        iids[3] = WebView2Core.__x_ABI_C__FIIterable_1___x_ABI_CWindows__CFoundation__CRectWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVectorView`1<Windows.Foundation.Rect>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        $2?.initialize(to: .from(swift: result))
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WindowsFoundation.Rect = .from(abi: $1)
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WindowsFoundation.Rect] = .from(abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        do {
+            try items.fill(abi: $3)
+        } catch { return failWith(error: error) }
+        $4?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectBridge>
+public class IVectorViewRect: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRect }
+
+    open func GetAt(_ index: UInt32) throws -> WindowsFoundation.Rect {
+        var result: __x_ABI_CWindows_CFoundation_CRect = .init()
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &result))
+        }
+        return .from(abi: result)
+    }
+
+    open func get_Size() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    open func IndexOf(_ value: WindowsFoundation.Rect, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, .from(swift: value), &index, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WindowsFoundation.Rect]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRect.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abi: _items)
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRect
+    internal typealias SwiftABI = IVectorViewRect
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVectorView<WindowsFoundation.Rect>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectImpl : IVectorView, AbiInterfaceImpl {
+    typealias T = WindowsFoundation.Rect
+    typealias Bridge = __x_ABI_C__FIVectorView_1___x_ABI_CWindows__CFoundation__CRectBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+    }
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WindowsFoundation.Rect {
+        try! _default.GetAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
+    fileprivate func indexOf(_ value: WindowsFoundation.Rect, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WindowsFoundation.Rect]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_Size() }
+    }
+
+    private lazy var _IIterable: IIterableRect! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WindowsFoundation.Rect>? {
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -4699,7 +6641,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2ContextMenuItem? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2ContextMenuItem? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -4710,7 +6652,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
     SetAt: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
         let index: UInt32 = $1
-        let value: WebView2Core.CoreWebView2ContextMenuItem? = .from(abi: ComPtr($2))
+        let value: WebView2Core.CoreWebView2ContextMenuItem? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: ComPtr($2))
         __unwrapped__instance.setAt(index, value)
         return S_OK
     },
@@ -4718,7 +6660,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
     InsertAt: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
         let index: UInt32 = $1
-        let value: WebView2Core.CoreWebView2ContextMenuItem? = .from(abi: ComPtr($2))
+        let value: WebView2Core.CoreWebView2ContextMenuItem? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: ComPtr($2))
         __unwrapped__instance.insertAt(index, value)
         return S_OK
     },
@@ -4732,7 +6674,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
 
     Append: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2ContextMenuItem? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2ContextMenuItem? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: ComPtr($1))
         __unwrapped__instance.append(value)
         return S_OK
     },
@@ -4749,24 +6691,37 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) },
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2ContextMenuItem?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    },
 
-    ReplaceAll: { _, _, _ in return failWith(err: E_NOTIMPL) }
+    ReplaceAll: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let items: [WebView2Core.CoreWebView2ContextMenuItem?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self, abi: (count: $1, start: $2))
+        __unwrapped__instance.replaceAll(items)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemBridge>
-internal class IVectorCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
+public class IVectorCoreWebView2ContextMenuItem: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2ContextMenuItem? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2ContextMenuItem? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -4774,7 +6729,7 @@ internal class IVectorCoreWebView2ContextMenuItem: WindowsFoundation.IInspectabl
         return result
     }
 
-    internal func GetViewImpl() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ContextMenuItem?>? {
+    open func GetView() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ContextMenuItem?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
@@ -4783,7 +6738,7 @@ internal class IVectorCoreWebView2ContextMenuItem: WindowsFoundation.IInspectabl
         return WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItemWrapper.unwrapFrom(abi: result)
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2ContextMenuItem?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2ContextMenuItem?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
@@ -4791,39 +6746,58 @@ internal class IVectorCoreWebView2ContextMenuItem: WindowsFoundation.IInspectabl
         return .init(from: result)
     }
 
-    internal func SetAtImpl(_ index: UInt32, _ value: WebView2Core.CoreWebView2ContextMenuItem?) throws {
+    open func SetAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2ContextMenuItem?) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.SetAt(pThis, index, RawPointer(value)))
         }
     }
 
-    internal func InsertAtImpl(_ index: UInt32, _ value: WebView2Core.CoreWebView2ContextMenuItem?) throws {
+    open func InsertAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2ContextMenuItem?) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.InsertAt(pThis, index, RawPointer(value)))
         }
     }
 
-    internal func RemoveAtImpl(_ index: UInt32) throws {
+    open func RemoveAt(_ index: UInt32) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAt(pThis, index))
         }
     }
 
-    internal func AppendImpl(_ value: WebView2Core.CoreWebView2ContextMenuItem?) throws {
+    open func Append(_ value: WebView2Core.CoreWebView2ContextMenuItem?) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Append(pThis, RawPointer(value)))
         }
     }
 
-    internal func RemoveAtEndImpl() throws {
+    open func RemoveAtEnd() throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAtEnd(pThis))
         }
     }
 
-    internal func ClearImpl() throws {
+    open func Clear() throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
+        }
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ContextMenuItem?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self, abi: _items)
+        }
+        return result
+    }
+
+    open func ReplaceAll(_ items: [WebView2Core.CoreWebView2ContextMenuItem?]) throws {
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.ReplaceAll(pThis, _items.count, _items.start))
+            }
         }
     }
 
@@ -4885,58 +6859,68 @@ fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCo
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2ContextMenuItem? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getview)
     fileprivate func getView() -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ContextMenuItem?>? {
-        try! _default.GetViewImpl()
+        try! _default.GetView()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2ContextMenuItem?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.setat)
     fileprivate func setAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2ContextMenuItem?) {
-        try! _default.SetAtImpl(index, value)
+        try! _default.SetAt(index, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.insertat)
     fileprivate func insertAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2ContextMenuItem?) {
-        try! _default.InsertAtImpl(index, value)
+        try! _default.InsertAt(index, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeat)
     fileprivate func removeAt(_ index: UInt32) {
-        try! _default.RemoveAtImpl(index)
+        try! _default.RemoveAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.append)
     fileprivate func append(_ value: WebView2Core.CoreWebView2ContextMenuItem?) {
-        try! _default.AppendImpl(value)
+        try! _default.Append(value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeatend)
     fileprivate func removeAtEnd() {
-        try! _default.RemoveAtEndImpl()
+        try! _default.RemoveAtEnd()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.clear)
     fileprivate func clear() {
-        try! _default.ClearImpl()
+        try! _default.Clear()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2ContextMenuItem?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.replaceall)
+    fileprivate func replaceAll(_ items: [WebView2Core.CoreWebView2ContextMenuItem?]) {
+        try! _default.ReplaceAll(items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2ContextMenuItem! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2ContextMenuItem?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -5000,7 +6984,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
 
     IndexOf: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: ComPtr($1))
         var index: UInt32 = 0
         let result = __unwrapped__instance.indexOf(value, &index)
         $2?.initialize(to: index)
@@ -5011,7 +6995,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
     SetAt: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
         let index: UInt32 = $1
-        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = .from(abi: ComPtr($2))
+        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: ComPtr($2))
         __unwrapped__instance.setAt(index, value)
         return S_OK
     },
@@ -5019,7 +7003,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
     InsertAt: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
         let index: UInt32 = $1
-        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = .from(abi: ComPtr($2))
+        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: ComPtr($2))
         __unwrapped__instance.insertAt(index, value)
         return S_OK
     },
@@ -5033,7 +7017,7 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
 
     Append: {
         guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = .from(abi: ComPtr($1))
+        let value: WebView2Core.CoreWebView2CustomSchemeRegistration? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: ComPtr($1))
         __unwrapped__instance.append(value)
         return S_OK
     },
@@ -5050,24 +7034,37 @@ internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__C
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) },
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WebView2Core.CoreWebView2CustomSchemeRegistration?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    },
 
-    ReplaceAll: { _, _, _ in return failWith(err: E_NOTIMPL) }
+    ReplaceAll: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let items: [WebView2Core.CoreWebView2CustomSchemeRegistration?] = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self, abi: (count: $1, start: $2))
+        __unwrapped__instance.replaceAll(items)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationBridge>
-internal class IVectorCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
+public class IVectorCoreWebView2CustomSchemeRegistration: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
+    open func GetAt(_ index: UInt32) throws -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.from(abi: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -5075,7 +7072,7 @@ internal class IVectorCoreWebView2CustomSchemeRegistration: WindowsFoundation.II
         return result
     }
 
-    internal func GetViewImpl() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
+    open func GetView() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
@@ -5084,7 +7081,7 @@ internal class IVectorCoreWebView2CustomSchemeRegistration: WindowsFoundation.II
         return WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistrationWrapper.unwrapFrom(abi: result)
     }
 
-    internal func IndexOfImpl(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, RawPointer(value), &index, &result))
@@ -5092,39 +7089,58 @@ internal class IVectorCoreWebView2CustomSchemeRegistration: WindowsFoundation.II
         return .init(from: result)
     }
 
-    internal func SetAtImpl(_ index: UInt32, _ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) throws {
+    open func SetAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.SetAt(pThis, index, RawPointer(value)))
         }
     }
 
-    internal func InsertAtImpl(_ index: UInt32, _ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) throws {
+    open func InsertAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.InsertAt(pThis, index, RawPointer(value)))
         }
     }
 
-    internal func RemoveAtImpl(_ index: UInt32) throws {
+    open func RemoveAt(_ index: UInt32) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAt(pThis, index))
         }
     }
 
-    internal func AppendImpl(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) throws {
+    open func Append(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Append(pThis, RawPointer(value)))
         }
     }
 
-    internal func RemoveAtEndImpl() throws {
+    open func RemoveAtEnd() throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAtEnd(pThis))
         }
     }
 
-    internal func ClearImpl() throws {
+    open func Clear() throws {
         _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
+        }
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2CustomSchemeRegistration?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self, abi: _items)
+        }
+        return result
+    }
+
+    open func ReplaceAll(_ items: [WebView2Core.CoreWebView2CustomSchemeRegistration?]) throws {
+        try items.toABI(abiBridge: __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CustomSchemeRegistrationBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CustomSchemeRegistration.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.ReplaceAll(pThis, _items.count, _items.start))
+            }
         }
     }
 
@@ -5186,58 +7202,68 @@ fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCo
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getat)
     fileprivate func getAt(_ index: UInt32) -> WebView2Core.CoreWebView2CustomSchemeRegistration? {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getview)
     fileprivate func getView() -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
-        try! _default.GetViewImpl()
+        try! _default.GetView()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.indexof)
     fileprivate func indexOf(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.setat)
     fileprivate func setAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) {
-        try! _default.SetAtImpl(index, value)
+        try! _default.SetAt(index, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.insertat)
     fileprivate func insertAt(_ index: UInt32, _ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) {
-        try! _default.InsertAtImpl(index, value)
+        try! _default.InsertAt(index, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeat)
     fileprivate func removeAt(_ index: UInt32) {
-        try! _default.RemoveAtImpl(index)
+        try! _default.RemoveAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.append)
     fileprivate func append(_ value: WebView2Core.CoreWebView2CustomSchemeRegistration?) {
-        try! _default.AppendImpl(value)
+        try! _default.Append(value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeatend)
     fileprivate func removeAtEnd() {
-        try! _default.RemoveAtEndImpl()
+        try! _default.RemoveAtEnd()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.clear)
     fileprivate func clear() {
-        try! _default.ClearImpl()
+        try! _default.Clear()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WebView2Core.CoreWebView2CustomSchemeRegistration?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.replaceall)
+    fileprivate func replaceAll(_ items: [WebView2Core.CoreWebView2CustomSchemeRegistration?]) {
+        try! _default.ReplaceAll(items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableCoreWebView2CustomSchemeRegistration! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WebView2Core.CoreWebView2CustomSchemeRegistration?>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -5351,15 +7377,30 @@ internal var __x_ABI_C__FIVector_1_HSTRINGVTable: __x_ABI_C__FIVector_1_HSTRINGV
         return S_OK
     },
 
-    GetMany: { _, _, _, _, _ in return failWith(err: E_NOTIMPL) },
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [String] = .from(abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        do {
+            try items.fill(abi: $3)
+        } catch { return failWith(error: error) }
+        $4?.initialize(to: result)
+        return S_OK
+    },
 
-    ReplaceAll: { _, _, _ in return failWith(err: E_NOTIMPL) }
+    ReplaceAll: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1_HSTRINGWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let items: [String] = .from(abi: (count: $1, start: $2))
+        __unwrapped__instance.replaceAll(items)
+        return S_OK
+    }
 )
 typealias __x_ABI_C__FIVector_1_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIVector_1_HSTRINGBridge>
-internal class IVectorString: WindowsFoundation.IInspectable {
+public class IVectorString: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVector_1_HSTRING }
 
-    internal func GetAtImpl(_ index: UInt32) throws -> String {
+    open func GetAt(_ index: UInt32) throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &result))
@@ -5367,7 +7408,7 @@ internal class IVectorString: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func get_SizeImpl() throws -> UInt32 {
+    open func get_Size() throws -> UInt32 {
         var result: UINT32 = 0
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
@@ -5375,7 +7416,7 @@ internal class IVectorString: WindowsFoundation.IInspectable {
         return result
     }
 
-    internal func GetViewImpl() throws -> WindowsFoundation.AnyIVectorView<String>? {
+    open func GetView() throws -> WindowsFoundation.AnyIVectorView<String>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
@@ -5384,7 +7425,7 @@ internal class IVectorString: WindowsFoundation.IInspectable {
         return WebView2Core.__x_ABI_C__FIVectorView_1_HSTRINGWrapper.unwrapFrom(abi: result)
     }
 
-    internal func IndexOfImpl(_ value: String, _ index: inout UInt32) throws -> Bool {
+    open func IndexOf(_ value: String, _ index: inout UInt32) throws -> Bool {
         var result: boolean = 0
         let _value = try! HString(value)
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
@@ -5393,42 +7434,61 @@ internal class IVectorString: WindowsFoundation.IInspectable {
         return .init(from: result)
     }
 
-    internal func SetAtImpl(_ index: UInt32, _ value: String) throws {
+    open func SetAt(_ index: UInt32, _ value: String) throws {
         let _value = try! HString(value)
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.SetAt(pThis, index, _value.get()))
         }
     }
 
-    internal func InsertAtImpl(_ index: UInt32, _ value: String) throws {
+    open func InsertAt(_ index: UInt32, _ value: String) throws {
         let _value = try! HString(value)
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.InsertAt(pThis, index, _value.get()))
         }
     }
 
-    internal func RemoveAtImpl(_ index: UInt32) throws {
+    open func RemoveAt(_ index: UInt32) throws {
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAt(pThis, index))
         }
     }
 
-    internal func AppendImpl(_ value: String) throws {
+    open func Append(_ value: String) throws {
         let _value = try! HString(value)
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Append(pThis, _value.get()))
         }
     }
 
-    internal func RemoveAtEndImpl() throws {
+    open func RemoveAtEnd() throws {
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAtEnd(pThis))
         }
     }
 
-    internal func ClearImpl() throws {
+    open func Clear() throws {
         _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
+        }
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [String]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abi: _items)
+        }
+        return result
+    }
+
+    open func ReplaceAll(_ items: [String]) throws {
+        try items.toABI { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1_HSTRING.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.ReplaceAll(pThis, _items.count, _items.start))
+            }
         }
     }
 
@@ -5490,58 +7550,68 @@ fileprivate class __x_ABI_C__FIVector_1_HSTRINGImpl : IVector, AbiInterfaceImpl 
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getat)
     fileprivate func getAt(_ index: UInt32) -> String {
-        try! _default.GetAtImpl(index)
+        try! _default.GetAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getview)
     fileprivate func getView() -> WindowsFoundation.AnyIVectorView<String>? {
-        try! _default.GetViewImpl()
+        try! _default.GetView()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.indexof)
     fileprivate func indexOf(_ value: String, _ index: inout UInt32) -> Bool {
-        try! _default.IndexOfImpl(value, &index)
+        try! _default.IndexOf(value, &index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.setat)
     fileprivate func setAt(_ index: UInt32, _ value: String) {
-        try! _default.SetAtImpl(index, value)
+        try! _default.SetAt(index, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.insertat)
     fileprivate func insertAt(_ index: UInt32, _ value: String) {
-        try! _default.InsertAtImpl(index, value)
+        try! _default.InsertAt(index, value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeat)
     fileprivate func removeAt(_ index: UInt32) {
-        try! _default.RemoveAtImpl(index)
+        try! _default.RemoveAt(index)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.append)
     fileprivate func append(_ value: String) {
-        try! _default.AppendImpl(value)
+        try! _default.Append(value)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeatend)
     fileprivate func removeAtEnd() {
-        try! _default.RemoveAtEndImpl()
+        try! _default.RemoveAtEnd()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.clear)
     fileprivate func clear() {
-        try! _default.ClearImpl()
+        try! _default.Clear()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [String]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.replaceall)
+    fileprivate func replaceAll(_ items: [String]) {
+        try! _default.ReplaceAll(items)
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.size)
     fileprivate var size : UInt32 {
-        get { try! _default.get_SizeImpl() }
+        get { try! _default.get_Size() }
     }
 
     private lazy var _IIterable: IIterableString! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<String>? {
-        try! _IIterable.FirstImpl()
+        try! _IIterable.First()
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -5601,14 +7671,14 @@ internal var __x_ABI_C__FIAsyncOperation_1_booleanVTable: __x_ABI_C__FIAsyncOper
             let result = try __unwrapped__instance.getResults()
             $1?.initialize(to: .init(from: result))
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1_booleanWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1_booleanBridge>
-internal class IAsyncOperationBool: WindowsFoundation.IInspectable {
+public class IAsyncOperationBool: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1_boolean }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<Bool>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<Bool>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1_boolean.self) { pThis in
@@ -5616,7 +7686,7 @@ internal class IAsyncOperationBool: WindowsFoundation.IInspectable {
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<Bool>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<Bool>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1_boolean.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -5625,7 +7695,7 @@ internal class IAsyncOperationBool: WindowsFoundation.IInspectable {
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1_booleanWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> Bool {
+    open func GetResults() throws -> Bool {
         var result: boolean = 0
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1_boolean.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &result))
@@ -5661,39 +7731,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1_booleanImpl : IAsyncOperation, A
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> Bool {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<Bool>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -5753,14 +7823,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__
             let result = try __unwrapped__instance.getResults()
             result?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge>
-internal class IAsyncOperationCoreWebView2BrowserExtension: WindowsFoundation.IInspectable {
+public class IAsyncOperationCoreWebView2BrowserExtension: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2BrowserExtension?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2BrowserExtension?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
@@ -5768,7 +7838,7 @@ internal class IAsyncOperationCoreWebView2BrowserExtension: WindowsFoundation.II
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2BrowserExtension?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2BrowserExtension?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -5777,13 +7847,13 @@ internal class IAsyncOperationCoreWebView2BrowserExtension: WindowsFoundation.II
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WebView2Core.CoreWebView2BrowserExtension? {
+    open func GetResults() throws -> WebView2Core.CoreWebView2BrowserExtension? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserExtensionBridge.from(abi: result)
     }
 
 }
@@ -5814,39 +7884,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebVi
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WebView2Core.CoreWebView2BrowserExtension? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WebView2Core.CoreWebView2BrowserExtension?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -5906,14 +7976,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__
             let result = try __unwrapped__instance.getResults()
             result?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerBridge>
-internal class IAsyncOperationCoreWebView2CompositionController: WindowsFoundation.IInspectable {
+public class IAsyncOperationCoreWebView2CompositionController: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2CompositionController?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2CompositionController?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController.self) { pThis in
@@ -5921,7 +7991,7 @@ internal class IAsyncOperationCoreWebView2CompositionController: WindowsFoundati
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2CompositionController?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2CompositionController?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -5930,13 +8000,13 @@ internal class IAsyncOperationCoreWebView2CompositionController: WindowsFoundati
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionControllerWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WebView2Core.CoreWebView2CompositionController? {
+    open func GetResults() throws -> WebView2Core.CoreWebView2CompositionController? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CompositionControllerBridge.from(abi: result)
     }
 
 }
@@ -5967,39 +8037,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebVi
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WebView2Core.CoreWebView2CompositionController? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WebView2Core.CoreWebView2CompositionController?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -6059,14 +8129,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__
             let result = try __unwrapped__instance.getResults()
             result?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerBridge>
-internal class IAsyncOperationCoreWebView2Controller: WindowsFoundation.IInspectable {
+public class IAsyncOperationCoreWebView2Controller: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Controller?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Controller?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller.self) { pThis in
@@ -6074,7 +8144,7 @@ internal class IAsyncOperationCoreWebView2Controller: WindowsFoundation.IInspect
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Controller?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Controller?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -6083,13 +8153,13 @@ internal class IAsyncOperationCoreWebView2Controller: WindowsFoundation.IInspect
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ControllerWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WebView2Core.CoreWebView2Controller? {
+    open func GetResults() throws -> WebView2Core.CoreWebView2Controller? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ControllerBridge.from(abi: result)
     }
 
 }
@@ -6120,39 +8190,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebVi
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WebView2Core.CoreWebView2Controller? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Controller?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -6212,14 +8282,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__
             let result = try __unwrapped__instance.getResults()
             result?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentBridge>
-internal class IAsyncOperationCoreWebView2Environment: WindowsFoundation.IInspectable {
+public class IAsyncOperationCoreWebView2Environment: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Environment?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Environment?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment.self) { pThis in
@@ -6227,7 +8297,7 @@ internal class IAsyncOperationCoreWebView2Environment: WindowsFoundation.IInspec
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Environment?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Environment?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -6236,13 +8306,13 @@ internal class IAsyncOperationCoreWebView2Environment: WindowsFoundation.IInspec
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2EnvironmentWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WebView2Core.CoreWebView2Environment? {
+    open func GetResults() throws -> WebView2Core.CoreWebView2Environment? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
             }
         }
-        return .from(abi: result)
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2EnvironmentBridge.from(abi: result)
     }
 
 }
@@ -6273,39 +8343,192 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebVi
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WebView2Core.CoreWebView2Environment? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WebView2Core.CoreWebView2Environment?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult: WindowsFoundation.IID {
+    .init(Data1: 0xb5f22dd6, Data2: 0x61bb, Data3: 0x55f1, Data4: ( 0x9a,0xaa,0xf6,0x5c,0xfd,0x7e,0xc3,0x45 ))// b5f22dd6-61bb-55f1-9aaa-f65cfd7ec345
+}
+
+internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultVTable: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IAsyncInfoWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IAsyncOperation`1<Microsoft.Web.WebView2.Core.CoreWebView2ExecuteScriptResult>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    put_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let handler = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        __unwrapped__instance.completed = handler
+        return S_OK
+    },
+
+    get_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.completed
+        let resultWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    GetResults: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let result = try __unwrapped__instance.getResults()
+            result?.copyTo($1)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultBridge>
+public class IAsyncOperationCoreWebView2ExecuteScriptResult: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult }
+
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2ExecuteScriptResult?>?) throws {
+        let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper(handler)
+        let _handler = try! handlerWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.put_Completed(pThis, _handler))
+        }
+    }
+
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2ExecuteScriptResult?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
+            }
+        }
+        return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultWrapper.unwrapFrom(abi: result)
+    }
+
+    open func GetResults() throws -> WebView2Core.CoreWebView2ExecuteScriptResult? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
+            }
+        }
+        return __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ExecuteScriptResultBridge.from(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResult
+    internal typealias SwiftABI = IAsyncOperationCoreWebView2ExecuteScriptResult
+    internal typealias SwiftProjection = WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2ExecuteScriptResult?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultImpl : IAsyncOperation, AbiInterfaceImpl {
+    typealias TResult = WebView2Core.CoreWebView2ExecuteScriptResult?
+    typealias Bridge = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ExecuteScriptResultBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
+    fileprivate func getResults() throws -> WebView2Core.CoreWebView2ExecuteScriptResult? {
+        try _default.GetResults()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
+    fileprivate var completed : AsyncOperationCompletedHandler<WebView2Core.CoreWebView2ExecuteScriptResult?>? {
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
+    }
+
+    private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
+    fileprivate func cancel() throws {
+        try _IAsyncInfo.Cancel()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
+    fileprivate func close() throws {
+        try _IAsyncInfo.Close()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
+    fileprivate var errorCode : HRESULT {
+        get { try! _IAsyncInfo.get_ErrorCode() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
+    fileprivate var id : UInt32 {
+        get { try! _IAsyncInfo.get_Id() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
+    fileprivate var status : WindowsFoundation.AsyncStatus {
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -6365,14 +8588,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__
             let result = try __unwrapped__instance.getResults()
             $1?.initialize(to: result)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusBridge>
-internal class IAsyncOperationCoreWebView2PrintStatus: WindowsFoundation.IInspectable {
+public class IAsyncOperationCoreWebView2PrintStatus: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatus }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2PrintStatus>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2PrintStatus>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatus.self) { pThis in
@@ -6380,7 +8603,7 @@ internal class IAsyncOperationCoreWebView2PrintStatus: WindowsFoundation.IInspec
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2PrintStatus>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2PrintStatus>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatus.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -6389,7 +8612,7 @@ internal class IAsyncOperationCoreWebView2PrintStatus: WindowsFoundation.IInspec
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatusWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WebView2Core.CoreWebView2PrintStatus {
+    open func GetResults() throws -> WebView2Core.CoreWebView2PrintStatus {
         var result: __x_ABI_CMicrosoft_CWeb_CWebView2_CCore_CCoreWebView2PrintStatus = .init(0)
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PrintStatus.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &result))
@@ -6425,39 +8648,191 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebVi
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WebView2Core.CoreWebView2PrintStatus {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WebView2Core.CoreWebView2PrintStatus>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult: WindowsFoundation.IID {
+    .init(Data1: 0xe46e064d, Data2: 0x1d9e, Data3: 0x56a5, Data4: ( 0x9b,0xc7,0x05,0xaf,0xe9,0x91,0x07,0x6c ))// e46e064d-1d9e-56a5-9bc7-05afe991076c
+}
+
+internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultVTable: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IAsyncInfoWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IAsyncOperation`1<Microsoft.Web.WebView2.Core.CoreWebView2SaveAsUIResult>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    put_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let handler = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        __unwrapped__instance.completed = handler
+        return S_OK
+    },
+
+    get_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.completed
+        let resultWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    GetResults: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let result = try __unwrapped__instance.getResults()
+            $1?.initialize(to: result)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultBridge>
+public class IAsyncOperationCoreWebView2SaveAsUIResult: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult }
+
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WebView2Core.CoreWebView2SaveAsUIResult>?) throws {
+        let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper(handler)
+        let _handler = try! handlerWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.put_Completed(pThis, _handler))
+        }
+    }
+
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WebView2Core.CoreWebView2SaveAsUIResult>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
+            }
+        }
+        return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultWrapper.unwrapFrom(abi: result)
+    }
+
+    open func GetResults() throws -> WebView2Core.CoreWebView2SaveAsUIResult {
+        var result: __x_ABI_CMicrosoft_CWeb_CWebView2_CCore_CCoreWebView2SaveAsUIResult = .init(0)
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &result))
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResult
+    internal typealias SwiftABI = IAsyncOperationCoreWebView2SaveAsUIResult
+    internal typealias SwiftProjection = WindowsFoundation.AnyIAsyncOperation<WebView2Core.CoreWebView2SaveAsUIResult>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultImpl : IAsyncOperation, AbiInterfaceImpl {
+    typealias TResult = WebView2Core.CoreWebView2SaveAsUIResult
+    typealias Bridge = __x_ABI_C__FIAsyncOperation_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIResultBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
+    fileprivate func getResults() throws -> WebView2Core.CoreWebView2SaveAsUIResult {
+        try _default.GetResults()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
+    fileprivate var completed : AsyncOperationCompletedHandler<WebView2Core.CoreWebView2SaveAsUIResult>? {
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
+    }
+
+    private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
+    fileprivate func cancel() throws {
+        try _IAsyncInfo.Cancel()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
+    fileprivate func close() throws {
+        try _IAsyncInfo.Close()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
+    fileprivate var errorCode : HRESULT {
+        get { try! _IAsyncInfo.get_ErrorCode() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
+    fileprivate var id : UInt32 {
+        get { try! _IAsyncInfo.get_Id() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
+    fileprivate var status : WindowsFoundation.AsyncStatus {
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -6517,14 +8892,14 @@ internal var __x_ABI_C__FIAsyncOperation_1_HSTRINGVTable: __x_ABI_C__FIAsyncOper
             let result = try __unwrapped__instance.getResults()
             $1?.initialize(to: try! HString(result).detach())
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1_HSTRINGWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1_HSTRINGBridge>
-internal class IAsyncOperationString: WindowsFoundation.IInspectable {
+public class IAsyncOperationString: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1_HSTRING }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<String>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<String>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1_HSTRING.self) { pThis in
@@ -6532,7 +8907,7 @@ internal class IAsyncOperationString: WindowsFoundation.IInspectable {
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<String>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<String>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1_HSTRING.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -6541,7 +8916,7 @@ internal class IAsyncOperationString: WindowsFoundation.IInspectable {
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1_HSTRINGWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> String {
+    open func GetResults() throws -> String {
         var result: HSTRING?
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1_HSTRING.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &result))
@@ -6577,39 +8952,193 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1_HSTRINGImpl : IAsyncOperation, A
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> String {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<String>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension: WindowsFoundation.IID {
+    .init(Data1: 0xcf6f1220, Data2: 0x3a4c, Data3: 0x5069, Data4: ( 0x95,0x0c,0xad,0x35,0xbc,0x83,0xc7,0xb7 ))// cf6f1220-3a4c-5069-950c-ad35bc83c7b7
+}
+
+internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.IID
+        iids[3] = __ABI_Windows_Foundation.IAsyncInfoWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.IAsyncOperation`1<Windows.Foundation.Collections.IVectorView`1<Microsoft.Web.WebView2.Core.CoreWebView2BrowserExtension>>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    put_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let handler = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        __unwrapped__instance.completed = handler
+        return S_OK
+    },
+
+    get_Completed: {
+        guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.completed
+        let resultWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    GetResults: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let result = try __unwrapped__instance.getResults()
+            let resultWrapper = WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper(result)
+            resultWrapper?.copyTo($1)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge>
+public class IAsyncOperationIVectorViewCoreWebView2BrowserExtension: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension }
+
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?>?) throws {
+        let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper(handler)
+        let _handler = try! handlerWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.put_Completed(pThis, _handler))
+        }
+    }
+
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
+            }
+        }
+        return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: result)
+    }
+
+    open func GetResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
+            }
+        }
+        return WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtension
+    internal typealias SwiftABI = IAsyncOperationIVectorViewCoreWebView2BrowserExtension
+    internal typealias SwiftProjection = WindowsFoundation.AnyIAsyncOperation<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionImpl : IAsyncOperation, AbiInterfaceImpl {
+    typealias TResult = WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?
+    typealias Bridge = __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserExtensionBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
+    fileprivate func getResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>? {
+        try _default.GetResults()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
+    fileprivate var completed : AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2BrowserExtension?>?>? {
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
+    }
+
+    private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
+    fileprivate func cancel() throws {
+        try _IAsyncInfo.Cancel()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
+    fileprivate func close() throws {
+        try _IAsyncInfo.Close()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
+    fileprivate var errorCode : HRESULT {
+        get { try! _IAsyncInfo.get_ErrorCode() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
+    fileprivate var id : UInt32 {
+        get { try! _IAsyncInfo.get_Id() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
+    fileprivate var status : WindowsFoundation.AsyncStatus {
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -6670,14 +9199,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMi
             let resultWrapper = WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper(result)
             resultWrapper?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieBridge>
-internal class IAsyncOperationIVectorViewCoreWebView2Cookie: WindowsFoundation.IInspectable {
+public class IAsyncOperationIVectorViewCoreWebView2Cookie: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
@@ -6685,7 +9214,7 @@ internal class IAsyncOperationIVectorViewCoreWebView2Cookie: WindowsFoundation.I
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -6694,7 +9223,7 @@ internal class IAsyncOperationIVectorViewCoreWebView2Cookie: WindowsFoundation.I
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CookieWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>? {
+    open func GetResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Cookie.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
@@ -6731,39 +9260,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_AB
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2Cookie?>?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -6824,14 +9353,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMi
             let resultWrapper = WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper(result)
             resultWrapper?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingBridge>
-internal class IAsyncOperationIVectorViewCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
+public class IAsyncOperationIVectorViewCoreWebView2PermissionSetting: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
@@ -6839,7 +9368,7 @@ internal class IAsyncOperationIVectorViewCoreWebView2PermissionSetting: WindowsF
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -6848,7 +9377,7 @@ internal class IAsyncOperationIVectorViewCoreWebView2PermissionSetting: WindowsF
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSettingWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>? {
+    open func GetResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionSetting.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
@@ -6885,39 +9414,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_AB
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2PermissionSetting?>?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -6978,14 +9507,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMi
             let resultWrapper = WebView2Core.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper(result)
             resultWrapper?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoBridge>
-internal class IAsyncOperationIVectorViewCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
+public class IAsyncOperationIVectorViewCoreWebView2ProcessExtendedInfo: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
@@ -6993,7 +9522,7 @@ internal class IAsyncOperationIVectorViewCoreWebView2ProcessExtendedInfo: Window
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -7002,7 +9531,7 @@ internal class IAsyncOperationIVectorViewCoreWebView2ProcessExtendedInfo: Window
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfoWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>? {
+    open func GetResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessExtendedInfo.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
@@ -7039,39 +9568,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_C__FIVectorView_1___x_AB
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<WindowsFoundation.AnyIVectorView<WebView2Core.CoreWebView2ProcessExtendedInfo?>?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -7132,14 +9661,14 @@ internal var __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams_
             let resultWrapper = __ABI_Windows_Storage_Streams.IRandomAccessStreamWrapper(result)
             resultWrapper?.copyTo($1)
             return S_OK
-        } catch { return failWith(err: E_FAIL) } 
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamBridge>
-internal class IAsyncOperationIRandomAccessStream: WindowsFoundation.IInspectable {
+public class IAsyncOperationIRandomAccessStream: WindowsFoundation.IInspectable {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStream }
 
-    internal func put_CompletedImpl(_ handler: AsyncOperationCompletedHandler<UWP.AnyIRandomAccessStream?>?) throws {
+    open func put_Completed(_ handler: AsyncOperationCompletedHandler<UWP.AnyIRandomAccessStream?>?) throws {
         let handlerWrapper = WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper(handler)
         let _handler = try! handlerWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStream.self) { pThis in
@@ -7147,7 +9676,7 @@ internal class IAsyncOperationIRandomAccessStream: WindowsFoundation.IInspectabl
         }
     }
 
-    internal func get_CompletedImpl() throws -> AsyncOperationCompletedHandler<UWP.AnyIRandomAccessStream?>? {
+    open func get_Completed() throws -> AsyncOperationCompletedHandler<UWP.AnyIRandomAccessStream?>? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStream.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_Completed(pThis, &resultAbi))
@@ -7156,7 +9685,7 @@ internal class IAsyncOperationIRandomAccessStream: WindowsFoundation.IInspectabl
         return WebView2Core.__x_ABI_C__FIAsyncOperationCompletedHandler_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStreamWrapper.unwrapFrom(abi: result)
     }
 
-    internal func GetResultsImpl() throws -> UWP.AnyIRandomAccessStream? {
+    open func GetResults() throws -> UWP.AnyIRandomAccessStream? {
         let (result) = try ComPtrs.initialize { resultAbi in
             _ = try perform(as: __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStreams__CIRandomAccessStream.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.GetResults(pThis, &resultAbi))
@@ -7193,39 +9722,39 @@ fileprivate class __x_ABI_C__FIAsyncOperation_1___x_ABI_CWindows__CStorage__CStr
     // MARK: WinRT
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.getresults)
     fileprivate func getResults() throws -> UWP.AnyIRandomAccessStream? {
-        try _default.GetResultsImpl()
+        try _default.GetResults()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.completed)
     fileprivate var completed : AsyncOperationCompletedHandler<UWP.AnyIRandomAccessStream?>? {
-        get { try! _default.get_CompletedImpl() }
-        set { try! _default.put_CompletedImpl(newValue) }
+        get { try! _default.get_Completed() }
+        set { try! _default.put_Completed(newValue) }
     }
 
     private lazy var _IAsyncInfo: __ABI_Windows_Foundation.IAsyncInfo! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.cancel)
     fileprivate func cancel() throws {
-        try _IAsyncInfo.CancelImpl()
+        try _IAsyncInfo.Cancel()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.close)
     fileprivate func close() throws {
-        try _IAsyncInfo.CloseImpl()
+        try _IAsyncInfo.Close()
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.errorcode)
     fileprivate var errorCode : HRESULT {
-        get { try! _IAsyncInfo.get_ErrorCodeImpl() }
+        get { try! _IAsyncInfo.get_ErrorCode() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.id)
     fileprivate var id : UInt32 {
-        get { try! _IAsyncInfo.get_IdImpl() }
+        get { try! _IAsyncInfo.get_Id() }
     }
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.iasyncoperation-1.status)
     fileprivate var status : WindowsFoundation.AsyncStatus {
-        get { try! _IAsyncInfo.get_StatusImpl() }
+        get { try! _IAsyncInfo.get_Status() }
     }
 
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
@@ -7247,18 +9776,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2_IInspectable.self) { pThis in
@@ -7277,7 +9808,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7298,18 +9829,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2BasicAuthenticationRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2BasicAuthenticationRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BasicAuthenticationRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2BasicAuthenticationRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2BasicAuthenticationRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2BasicAuthenticationRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2BasicAuthenticationRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BasicAuthenticationRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7326,7 +9859,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7347,18 +9880,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2ClientCertificateRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ClientCertificateRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ClientCertificateRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2ClientCertificateRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2ClientCertificateRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ClientCertificateRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ClientCertificateRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ClientCertificateRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7375,7 +9910,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7396,18 +9931,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2ContentLoadingEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ContentLoadingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContentLoadingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2ContentLoadingEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2ContentLoadingEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ContentLoadingEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ContentLoadingEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7424,7 +9961,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7445,18 +9982,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2ContextMenuRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ContextMenuRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2ContextMenuRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2ContextMenuRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ContextMenuRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ContextMenuRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7473,7 +10012,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7494,18 +10033,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2DOMContentLoadedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2DOMContentLoadedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2DOMContentLoadedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7522,7 +10063,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7543,18 +10084,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2DevToolsProtocolEventReceivedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2DevToolsProtocolEventReceivedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2DevToolsProtocolEventReceivedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2DevToolsProtocolEventReceivedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2DevToolsProtocolEventReceivedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2DevToolsProtocolEventReceivedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2DevToolsProtocolEventReceivedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DevToolsProtocolEventReceivedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7571,7 +10114,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7592,18 +10135,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2DownloadStartingEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2DownloadStartingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2DownloadStartingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2DownloadStartingEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2DownloadStartingEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2DownloadStartingEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2DownloadStartingEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadStartingEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7620,7 +10165,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7641,18 +10186,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2FrameCreatedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2FrameCreatedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameCreatedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2FrameCreatedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2FrameCreatedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2FrameCreatedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2FrameCreatedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7669,7 +10216,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7690,18 +10237,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2LaunchingExternalUriSchemeEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2LaunchingExternalUriSchemeEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2LaunchingExternalUriSchemeEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2LaunchingExternalUriSchemeEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2LaunchingExternalUriSchemeEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2LaunchingExternalUriSchemeEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2LaunchingExternalUriSchemeEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2LaunchingExternalUriSchemeEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7718,7 +10267,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7739,18 +10288,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2NavigationCompletedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2NavigationCompletedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NavigationCompletedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2NavigationCompletedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2NavigationCompletedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2NavigationCompletedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2NavigationCompletedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7767,7 +10318,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7788,18 +10339,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2NavigationStartingEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2NavigationStartingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NavigationStartingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2NavigationStartingEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2NavigationStartingEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2NavigationStartingEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2NavigationStartingEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7816,7 +10369,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7837,18 +10390,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2NewWindowRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2NewWindowRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NewWindowRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2NewWindowRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2NewWindowRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2NewWindowRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2NewWindowRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NewWindowRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7865,7 +10420,58 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xd4caa596, Data2: 0xc243, Data3: 0x5ba6, Data4: ( 0x86,0xda,0x4f,0x91,0xe7,0x73,0xa7,0xbe ))// d4caa596-c243-5ba6-86da-4f91e773a7be
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2NotificationReceivedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NotificationReceivedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsBridge>
+public class TypedEventHandlerCoreWebView2_CoreWebView2NotificationReceivedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgs }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2NotificationReceivedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2?, WebView2Core.CoreWebView2NotificationReceivedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NotificationReceivedEventArgs
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2_CoreWebView2NotificationReceivedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7886,18 +10492,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2PermissionRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2PermissionRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2PermissionRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2PermissionRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2PermissionRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2PermissionRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7914,7 +10522,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7935,18 +10543,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2ProcessFailedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ProcessFailedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProcessFailedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2ProcessFailedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2ProcessFailedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ProcessFailedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ProcessFailedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ProcessFailedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -7963,7 +10573,160 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x22bc917e, Data2: 0xc37c, Data3: 0x587c, Data4: ( 0x99,0x08,0xe6,0xf0,0xfe,0x1a,0xd0,0x00 ))// 22bc917e-c37c-587c-9908-e6f0fe1ad000
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2SaveAsUIShowingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2SaveAsUIShowingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsBridge>
+public class TypedEventHandlerCoreWebView2_CoreWebView2SaveAsUIShowingEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgs }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2SaveAsUIShowingEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2?, WebView2Core.CoreWebView2SaveAsUIShowingEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveAsUIShowingEventArgs
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2_CoreWebView2SaveAsUIShowingEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x286a390d, Data2: 0x44b8, Data3: 0x57fb, Data4: ( 0xb4,0x1e,0xec,0x33,0xd0,0xdd,0x3d,0xe4 ))// 286a390d-44b8-57fb-b41e-ec33d0dd3de4
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2SaveFileSecurityCheckStartingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2SaveFileSecurityCheckStartingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsBridge>
+public class TypedEventHandlerCoreWebView2_CoreWebView2SaveFileSecurityCheckStartingEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgs }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2SaveFileSecurityCheckStartingEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2?, WebView2Core.CoreWebView2SaveFileSecurityCheckStartingEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SaveFileSecurityCheckStartingEventArgs
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2_CoreWebView2SaveFileSecurityCheckStartingEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x9554dfaf, Data2: 0x4e2d, Data3: 0x555d, Data4: ( 0x8b,0x4d,0xa1,0xc0,0x70,0xf8,0x98,0xee ))// 9554dfaf-4e2d-555d-8b4d-a1c070f898ee
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ScreenCaptureStartingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ScreenCaptureStartingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsBridge>
+public class TypedEventHandlerCoreWebView2_CoreWebView2ScreenCaptureStartingEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ScreenCaptureStartingEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2?, WebView2Core.CoreWebView2ScreenCaptureStartingEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2_CoreWebView2ScreenCaptureStartingEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -7984,18 +10747,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2ScriptDialogOpeningEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ScriptDialogOpeningEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ScriptDialogOpeningEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2ScriptDialogOpeningEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2ScriptDialogOpeningEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ScriptDialogOpeningEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ScriptDialogOpeningEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScriptDialogOpeningEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8012,7 +10777,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8033,18 +10798,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2ServerCertificateErrorDetectedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ServerCertificateErrorDetectedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ServerCertificateErrorDetectedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2ServerCertificateErrorDetectedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2ServerCertificateErrorDetectedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ServerCertificateErrorDetectedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2ServerCertificateErrorDetectedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ServerCertificateErrorDetectedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8061,7 +10828,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8082,18 +10849,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2SourceChangedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2SourceChangedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2SourceChangedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2SourceChangedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2SourceChangedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2SourceChangedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2SourceChangedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2SourceChangedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8110,7 +10879,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8131,18 +10900,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2WebMessageReceivedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2WebMessageReceivedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2WebMessageReceivedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8159,7 +10930,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8180,18 +10951,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2WebResourceRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2WebResourceRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2WebResourceRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2WebResourceRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2WebResourceRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2WebResourceRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2WebResourceRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8208,7 +10981,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8229,18 +11002,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2WebResourceResponseReceivedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2Bridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2WebResourceResponseReceivedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2WebResourceResponseReceivedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2_CoreWebView2WebResourceResponseReceivedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2_CoreWebView2WebResourceResponseReceivedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2WebResourceResponseReceivedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2?, _ args: WebView2Core.CoreWebView2WebResourceResponseReceivedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebResourceResponseReceivedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8257,7 +11032,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8278,18 +11053,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2CompositionController? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2CompositionController? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CompositionControllerBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2CompositionController_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2CompositionController_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2CompositionController?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2CompositionController?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController_IInspectable.self) { pThis in
@@ -8308,7 +11085,58 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0x3c30a9d1, Data2: 0xbab9, Data3: 0x540f, Data4: ( 0xbc,0x19,0x8b,0xb7,0x69,0x6b,0xd3,0x2c ))// 3c30a9d1-bab9-540f-bc19-8bb7696bd32c
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2CompositionController? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2CompositionControllerBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2NonClientRegionChangedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NonClientRegionChangedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsBridge>
+public class TypedEventHandlerCoreWebView2CompositionController_CoreWebView2NonClientRegionChangedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgs }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2CompositionController?, _ args: WebView2Core.CoreWebView2NonClientRegionChangedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2CompositionController?, WebView2Core.CoreWebView2NonClientRegionChangedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2CompositionController___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NonClientRegionChangedEventArgs
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2CompositionController_CoreWebView2NonClientRegionChangedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8329,18 +11157,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2ContextMenuItem? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2ContextMenuItem? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContextMenuItemBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2ContextMenuItem_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2ContextMenuItem_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2ContextMenuItem?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2ContextMenuItem?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContextMenuItem_IInspectable.self) { pThis in
@@ -8359,7 +11189,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8380,18 +11210,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Controller? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Controller? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ControllerBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2Controller_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Controller_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Controller?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Controller?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller_IInspectable.self) { pThis in
@@ -8410,7 +11242,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8431,18 +11263,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Controller? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2AcceleratorKeyPressedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Controller? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ControllerBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2AcceleratorKeyPressedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2AcceleratorKeyPressedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Controller_CoreWebView2AcceleratorKeyPressedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Controller_CoreWebView2AcceleratorKeyPressedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Controller?, _ args: WebView2Core.CoreWebView2AcceleratorKeyPressedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Controller?, _ args: WebView2Core.CoreWebView2AcceleratorKeyPressedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2AcceleratorKeyPressedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8459,7 +11293,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8480,18 +11314,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Controller? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2MoveFocusRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Controller? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ControllerBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2MoveFocusRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2MoveFocusRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Controller_CoreWebView2MoveFocusRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Controller_CoreWebView2MoveFocusRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Controller?, _ args: WebView2Core.CoreWebView2MoveFocusRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Controller?, _ args: WebView2Core.CoreWebView2MoveFocusRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Controller___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2MoveFocusRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8508,7 +11344,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8529,18 +11365,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2DownloadOperation? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2DownloadOperation? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2DownloadOperationBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2DownloadOperation_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2DownloadOperation_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2DownloadOperation?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2DownloadOperation?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DownloadOperation_IInspectable.self) { pThis in
@@ -8559,7 +11397,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8580,18 +11418,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Environment? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Environment? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2EnvironmentBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2Environment_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Environment_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Environment?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Environment?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment_IInspectable.self) { pThis in
@@ -8610,7 +11450,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8631,18 +11471,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Environment? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2BrowserProcessExitedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Environment? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2EnvironmentBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2BrowserProcessExitedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2BrowserProcessExitedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Environment_CoreWebView2BrowserProcessExitedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Environment_CoreWebView2BrowserProcessExitedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Environment?, _ args: WebView2Core.CoreWebView2BrowserProcessExitedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Environment?, _ args: WebView2Core.CoreWebView2BrowserProcessExitedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Environment___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2BrowserProcessExitedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8659,7 +11501,60 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectable: WindowsFoundation.IID {
+    .init(Data1: 0x83dbbbee, Data2: 0xadc1, Data3: 0x57f2, Data4: ( 0x8e,0x7b,0x77,0x1b,0x15,0x1e,0x74,0xf4 ))// 83dbbbee-adc1-57f2-8e7b-771b151e74f4
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectable {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Find? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FindBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableBridge>
+public class TypedEventHandlerCoreWebView2Find_Any: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectable }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Find?, _ args: Any?) throws {
+        let argsWrapper = __ABI_.AnyWrapper(args)
+        let _args = try! argsWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectable.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), _args))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectableBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2Find?, Any?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Find_IInspectable
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2Find_Any
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8680,18 +11575,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Frame? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2Frame_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Frame_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Frame?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame_IInspectable.self) { pThis in
@@ -8710,7 +11607,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8731,18 +11628,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Frame? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2ContentLoadingEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ContentLoadingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ContentLoadingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Frame_CoreWebView2ContentLoadingEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2ContentLoadingEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2ContentLoadingEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2ContentLoadingEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ContentLoadingEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8759,7 +11658,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8780,18 +11679,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Frame? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2DOMContentLoadedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Frame_CoreWebView2DOMContentLoadedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2DOMContentLoadedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2DOMContentLoadedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2DOMContentLoadedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8808,7 +11709,58 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xca7dfbd0, Data2: 0x7adb, Data3: 0x548f, Data4: ( 0x9e,0x01,0x02,0xcf,0x47,0xe8,0xc8,0xbd ))// ca7dfbd0-7adb-548f-9e01-02cf47e8c8bd
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2FrameCreatedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameCreatedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsBridge>
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2FrameCreatedEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgs }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2FrameCreatedEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2Frame?, WebView2Core.CoreWebView2FrameCreatedEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2FrameCreatedEventArgs
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2Frame_CoreWebView2FrameCreatedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8829,18 +11781,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Frame? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2NavigationCompletedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2NavigationCompletedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NavigationCompletedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Frame_CoreWebView2NavigationCompletedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2NavigationCompletedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2NavigationCompletedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2NavigationCompletedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationCompletedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8857,7 +11811,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8878,18 +11832,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Frame? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2NavigationStartingEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2NavigationStartingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NavigationStartingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Frame_CoreWebView2NavigationStartingEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2NavigationStartingEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2NavigationStartingEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2NavigationStartingEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2NavigationStartingEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8906,7 +11862,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8927,18 +11883,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Frame? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2PermissionRequestedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2PermissionRequestedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2PermissionRequestedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Frame_CoreWebView2PermissionRequestedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2PermissionRequestedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2PermissionRequestedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2PermissionRequestedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2PermissionRequestedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -8955,7 +11913,58 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xb66e153b, Data2: 0xfa55, Data3: 0x579d, Data4: ( 0x9e,0x3c,0x3f,0x26,0xc9,0xbc,0x45,0x56 ))// b66e153b-fa55-579d-9e3c-3f26c9bc4556
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2ScreenCaptureStartingEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ScreenCaptureStartingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsBridge>
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2ScreenCaptureStartingEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2ScreenCaptureStartingEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2Frame?, WebView2Core.CoreWebView2ScreenCaptureStartingEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2ScreenCaptureStartingEventArgs
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2Frame_CoreWebView2ScreenCaptureStartingEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -8976,18 +11985,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Frame? = .from(abi: ComPtr($1))
-        let args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs? = .from(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Frame? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2FrameBridge.from(abi: ComPtr($1))
+            let args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2WebMessageReceivedEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgsBridge>
-internal class TypedEventHandlerCoreWebView2Frame_CoreWebView2WebMessageReceivedEventArgs: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Frame_CoreWebView2WebMessageReceivedEventArgs: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgs }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Frame?, _ args: WebView2Core.CoreWebView2WebMessageReceivedEventArgs?) throws {
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Frame___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2WebMessageReceivedEventArgs.self) { pThis in
             try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
         }
@@ -9004,7 +12015,60 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectable: WindowsFoundation.IID {
+    .init(Data1: 0xcb464b90, Data2: 0xc60a, Data3: 0x5e14, Data4: ( 0xb8,0xeb,0x9e,0xfd,0x08,0xf0,0x30,0x2f ))// cb464b90-c60a-5e14-b8eb-9efd08f0302f
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectable {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Notification? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2NotificationBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableBridge>
+public class TypedEventHandlerCoreWebView2Notification_Any: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectable }
+
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Notification?, _ args: Any?) throws {
+        let argsWrapper = __ABI_.AnyWrapper(args)
+        let _args = try! argsWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectable.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), _args))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectableBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WebView2Core.CoreWebView2Notification?, Any?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Notification_IInspectable
+    internal typealias SwiftABI = WebView2Core.TypedEventHandlerCoreWebView2Notification_Any
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
         }
         return handler
     }
@@ -9025,18 +12089,20 @@ internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView
     AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectableWrapper.addRef($0) },
     Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectableWrapper.release($0) },
     Invoke: {
-        guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
-        let sender: WebView2Core.CoreWebView2Profile? = .from(abi: ComPtr($1))
-        let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
-        __unwrapped__instance(sender, args)
-        return S_OK
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectableWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WebView2Core.CoreWebView2Profile? = __IMPL_Microsoft_Web_WebView2_Core.CoreWebView2ProfileBridge.from(abi: ComPtr($1))
+            let args: Any? = __ABI_.AnyWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
     }
 )
 typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectableWrapper = InterfaceWrapperBase<WebView2Core.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectableBridge>
-internal class TypedEventHandlerCoreWebView2Profile_Any: WindowsFoundation.IUnknown {
+public class TypedEventHandlerCoreWebView2Profile_Any: WindowsFoundation.IUnknown {
     override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectable }
 
-    internal func InvokeImpl(_ sender: WebView2Core.CoreWebView2Profile?, _ args: Any?) throws {
+    open func Invoke(_ sender: WebView2Core.CoreWebView2Profile?, _ args: Any?) throws {
         let argsWrapper = __ABI_.AnyWrapper(args)
         let _args = try! argsWrapper?.toABI { $0 }
         _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebView2__CCore__CCoreWebView2Profile_IInspectable.self) { pThis in
@@ -9055,7 +12121,7 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CWeb__CWebVi
         guard let abi = abi else { return nil }
         let _default = SwiftABI(abi)
         let handler: Handler = { (sender, args) in
-            try! _default.InvokeImpl(sender, args)
+            try _default.Invoke(sender, args)
         }
         return handler
     }

@@ -39,8 +39,8 @@ typedef struct _InteropImpl
 #pragma warning(push)
 #pragma warning(disable:4505) // linker warning: unreferenced local function has been removed
 
-__declspec(selectany) InteropImpl s_impl { nullptr };
-__declspec(selectany) HMODULE s_module { nullptr };
+__declspec(selectany) InteropImpl s_impl {};
+__declspec(selectany) HMODULE s_module {};
 
 
 // Load the FrameworkUdk library if needed and store pointers to the handle conversion functions.
@@ -48,7 +48,7 @@ __declspec(selectany) HMODULE s_module { nullptr };
 // Note that in unpackaged apps this will only work after a call to MddBootstrapInitialize().
 static void EnsureInteropImplLoaded()
 {
-    if (s_module == nullptr)
+    if (::InterlockedCompareExchangePointer(reinterpret_cast<volatile PVOID*>(&s_module), nullptr, nullptr) == nullptr)
     {
         HMODULE hmod = ::GetModuleHandle(TEXT("Microsoft.Internal.FrameworkUdk.dll"));
         if (hmod == nullptr)
@@ -83,7 +83,7 @@ static void EnsureInteropImplLoaded()
         }
     }
 
-    winrt::check_bool(s_module != nullptr);
+    winrt::check_bool(::InterlockedCompareExchangePointer(reinterpret_cast<volatile PVOID*>(&s_module), nullptr, nullptr) != nullptr);
 }
 
 

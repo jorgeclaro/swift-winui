@@ -51,7 +51,7 @@ open class SwiftApplication: Application, IXamlMetadataProvider {
                 }
 
                 var application: SwiftApplication!
-                Application.start { _ in
+                try Application.start { _ in
                     MainRunLoopTickler.setup()
                     application = (instance as! SwiftApplication.Type).init()
                 }
@@ -82,5 +82,10 @@ open class SwiftApplication: Application, IXamlMetadataProvider {
 
     public func getXamlType(_ fullName: String) throws -> IXamlType! {
         try metadataProvider.getXamlType(fullName)
+    }
+
+    // Added to IXamlMetadataProvider in Windows App SDK 1.7.
+    public func getXmlnsDefinitions() throws -> [XmlnsDefinition] {
+        try metadataProvider.getXmlnsDefinitions()
     }
 }
