@@ -302,6 +302,24 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls_Primitives {
             return handler
         }
     }
+    public enum AppBarButtonTemplateSettingsBridge: AbiBridge {
+        public typealias SwiftProjection = AppBarButtonTemplateSettings
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings>?) -> AppBarButtonTemplateSettings? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+        }
+    }
+
+    public enum AppBarTemplateSettingsBridge: AbiBridge {
+        public typealias SwiftProjection = AppBarTemplateSettings
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings>?) -> AppBarTemplateSettings? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+        }
+    }
+
     public enum ButtonBaseBridge: ComposableBridge {
         public typealias SwiftProjection = ButtonBase
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIButtonBase
@@ -336,6 +354,15 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls_Primitives {
         public typealias SwiftProjection = ComboBoxTemplateSettings
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings
         public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings>?) -> ComboBoxTemplateSettings? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+        }
+    }
+
+    public enum CommandBarTemplateSettingsBridge: AbiBridge {
+        public typealias SwiftProjection = CommandBarTemplateSettings
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings>?) -> CommandBarTemplateSettings? {
             guard let abi = abi else { return nil }
             return .init(fromAbi: WindowsFoundation.IInspectable(abi))
         }
@@ -705,6 +732,20 @@ public class IScrollSnapPointsInfoMaker: MakeFromAbi {
     }
 }
 @_spi(WinRTInternal)
+public class AppBarButtonTemplateSettingsMaker: MakeFromAbi {
+    public typealias SwiftType = AppBarButtonTemplateSettings
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return AppBarButtonTemplateSettings(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class AppBarTemplateSettingsMaker: MakeFromAbi {
+    public typealias SwiftType = AppBarTemplateSettings
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return AppBarTemplateSettings(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
 public class ButtonBaseMaker: MakeFromAbi {
     public typealias SwiftType = ButtonBase
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
@@ -723,6 +764,13 @@ public class ComboBoxTemplateSettingsMaker: MakeFromAbi {
     public typealias SwiftType = ComboBoxTemplateSettings
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
         return ComboBoxTemplateSettings(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class CommandBarTemplateSettingsMaker: MakeFromAbi {
+    public typealias SwiftType = CommandBarTemplateSettings
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return CommandBarTemplateSettings(fromAbi: abi)
     }
 }
 @_spi(WinRTInternal)

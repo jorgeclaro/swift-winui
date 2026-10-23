@@ -6,6 +6,48 @@ import CWinRT
 
 @_spi(WinRTInternal)
 public enum __IMPL_Microsoft_UI_Xaml_Controls {
+    public enum ICommandBarElementBridge : AbiInterfaceBridge {
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICommandBarElement
+        public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElement
+        public typealias SwiftProjection = AnyICommandBarElement
+        public static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+            guard let abi = abi else { return nil }
+            return ICommandBarElementImpl(abi)
+        }
+
+        public static func makeAbi() -> CABI {
+            let vtblPtr = withUnsafeMutablePointer(to: &__ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementVTable) { $0 }
+            return .init(lpVtbl: vtblPtr)
+        }
+    }
+
+    fileprivate class ICommandBarElementImpl: ICommandBarElement, WinRTAbiImpl {
+        fileprivate typealias Bridge = ICommandBarElementBridge
+        fileprivate let _default: Bridge.SwiftABI
+        fileprivate var thisPtr: WindowsFoundation.IInspectable { _default }
+        fileprivate init(_ fromAbi: ComPtr<Bridge.CABI>) {
+            _default = Bridge.SwiftABI(fromAbi)
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement.dynamicoverfloworder)
+        fileprivate var dynamicOverflowOrder : Int32 {
+            get { try! _default.get_DynamicOverflowOrder() }
+            set { try! _default.put_DynamicOverflowOrder(newValue) }
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement.iscompact)
+        fileprivate var isCompact : Bool {
+            get { try! _default.get_IsCompact() }
+            set { try! _default.put_IsCompact(newValue) }
+        }
+
+        /// [Open Microsoft documentation](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement.isinoverflow)
+        fileprivate var isInOverflow : Bool {
+            get { try! _default.get_IsInOverflow() }
+        }
+
+    }
+
     public enum IInsertionPanelBridge : AbiInterfaceBridge {
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIInsertionPanel
         public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IInsertionPanel
@@ -355,6 +397,69 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls {
         }
     }
 
+    public enum AppBarBridge: ComposableBridge {
+        public typealias SwiftProjection = AppBar
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBar
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBar>?) -> AppBar? {
+            guard let abi = abi else { return nil }
+            return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+        }
+        public enum IAppBarOverrides : ComposableImpl {
+            public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarOverrides
+            public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBarOverrides
+            public typealias Class = AppBar
+            public typealias SwiftProjection = WinRTClassWeakReference<Class>
+            public enum Default : AbiInterface {
+                public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBar
+                public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBar
+            }
+        }
+        @_spi(WinRTInternal)
+        public typealias Composable = IAppBarOverrides
+    }
+
+    public enum AppBarButtonBridge: ComposableBridge {
+        public typealias SwiftProjection = AppBarButton
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarButton
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarButton>?) -> AppBarButton? {
+            guard let abi = abi else { return nil }
+            return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+        }
+        public enum IContentControlOverrides : ComposableImpl {
+            public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIContentControlOverrides
+            public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IContentControlOverrides
+            public typealias Class = AppBarButton
+            public typealias SwiftProjection = WinRTClassWeakReference<Class>
+            public enum Default : AbiInterface {
+                public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarButton
+                public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBarButton
+            }
+        }
+        @_spi(WinRTInternal)
+        public typealias Composable = IContentControlOverrides
+    }
+
+    public enum AppBarSeparatorBridge: ComposableBridge {
+        public typealias SwiftProjection = AppBarSeparator
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarSeparator
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarSeparator>?) -> AppBarSeparator? {
+            guard let abi = abi else { return nil }
+            return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+        }
+        public enum IControlOverrides : ComposableImpl {
+            public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIControlOverrides
+            public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IControlOverrides
+            public typealias Class = AppBarSeparator
+            public typealias SwiftProjection = WinRTClassWeakReference<Class>
+            public enum Default : AbiInterface {
+                public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarSeparator
+                public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBarSeparator
+            }
+        }
+        @_spi(WinRTInternal)
+        public typealias Composable = IControlOverrides
+    }
+
     public enum AutoSuggestBoxBridge: AbiBridge {
         public typealias SwiftProjection = AutoSuggestBox
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAutoSuggestBox
@@ -658,6 +763,27 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls {
         }
     }
 
+    public enum CommandBarBridge: ComposableBridge {
+        public typealias SwiftProjection = CommandBar
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICommandBar
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CICommandBar>?) -> CommandBar? {
+            guard let abi = abi else { return nil }
+            return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+        }
+        public enum IAppBarOverrides : ComposableImpl {
+            public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIAppBarOverrides
+            public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IAppBarOverrides
+            public typealias Class = CommandBar
+            public typealias SwiftProjection = WinRTClassWeakReference<Class>
+            public enum Default : AbiInterface {
+                public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CICommandBar
+                public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.ICommandBar
+            }
+        }
+        @_spi(WinRTInternal)
+        public typealias Composable = IAppBarOverrides
+    }
+
     public enum ContainerContentChangingEventArgsBridge: AbiBridge {
         public typealias SwiftProjection = ContainerContentChangingEventArgs
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIContainerContentChangingEventArgs
@@ -910,6 +1036,15 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls {
         }
     }
 
+    public enum DynamicOverflowItemsChangingEventArgsBridge: AbiBridge {
+        public typealias SwiftProjection = DynamicOverflowItemsChangingEventArgs
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDynamicOverflowItemsChangingEventArgs
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIDynamicOverflowItemsChangingEventArgs>?) -> DynamicOverflowItemsChangingEventArgs? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+        }
+    }
+
     public enum FlyoutBridge: ComposableBridge {
         public typealias SwiftProjection = Flyout
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIFlyout
@@ -968,6 +1103,27 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls {
             guard let abi = abi else { return nil }
             return .init(fromAbi: WindowsFoundation.IInspectable(abi))
         }
+    }
+
+    public enum FontIconBridge: ComposableBridge {
+        public typealias SwiftProjection = FontIcon
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIFontIcon
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CIFontIcon>?) -> FontIcon? {
+            guard let abi = abi else { return nil }
+            return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
+        }
+        public enum IFrameworkElementOverrides : ComposableImpl {
+            public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CIFrameworkElementOverrides
+            public typealias SwiftABI = __ABI_Microsoft_UI_Xaml.IFrameworkElementOverrides
+            public typealias Class = FontIcon
+            public typealias SwiftProjection = WinRTClassWeakReference<Class>
+            public enum Default : AbiInterface {
+                public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CIFontIcon
+                public typealias SwiftABI = __ABI_Microsoft_UI_Xaml_Controls.IFontIcon
+            }
+        }
+        @_spi(WinRTInternal)
+        public typealias Composable = IFrameworkElementOverrides
     }
 
     public enum GridBridge: ComposableBridge {
@@ -2032,6 +2188,15 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls {
         public typealias Composable = IStyleSelectorOverrides
     }
 
+    public enum SymbolIconBridge: AbiBridge {
+        public typealias SwiftProjection = SymbolIcon
+        public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CISymbolIcon
+        public static func from(abi: ComPtr<__x_ABI_CMicrosoft_CUI_CXaml_CControls_CISymbolIcon>?) -> SymbolIcon? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: WindowsFoundation.IInspectable(abi))
+        }
+    }
+
     public enum TextBlockBridge: AbiBridge {
         public typealias SwiftProjection = TextBlock
         public typealias CABI = __x_ABI_CMicrosoft_CUI_CXaml_CControls_CITextBlock
@@ -2292,6 +2457,14 @@ public enum __IMPL_Microsoft_UI_Xaml_Controls {
 
 }
 @_spi(WinRTInternal)
+public class ICommandBarElementMaker: MakeFromAbi {
+    public typealias SwiftType = AnyICommandBarElement
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElement = try! abi.QueryInterface()
+        return __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
 public class IInsertionPanelMaker: MakeFromAbi {
     public typealias SwiftType = AnyIInsertionPanel
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
@@ -2336,6 +2509,27 @@ public class AnchorRequestedEventArgsMaker: MakeFromAbi {
     public typealias SwiftType = AnchorRequestedEventArgs
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
         return AnchorRequestedEventArgs(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class AppBarMaker: MakeFromAbi {
+    public typealias SwiftType = AppBar
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return AppBar(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class AppBarButtonMaker: MakeFromAbi {
+    public typealias SwiftType = AppBarButton
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return AppBarButton(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class AppBarSeparatorMaker: MakeFromAbi {
+    public typealias SwiftType = AppBarSeparator
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return AppBarSeparator(fromAbi: abi)
     }
 }
 @_spi(WinRTInternal)
@@ -2500,6 +2694,13 @@ public class ComboBoxTextSubmittedEventArgsMaker: MakeFromAbi {
     }
 }
 @_spi(WinRTInternal)
+public class CommandBarMaker: MakeFromAbi {
+    public typealias SwiftType = CommandBar
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return CommandBar(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
 public class ContainerContentChangingEventArgsMaker: MakeFromAbi {
     public typealias SwiftType = ContainerContentChangingEventArgs
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
@@ -2640,6 +2841,13 @@ public class DragItemsStartingEventArgsMaker: MakeFromAbi {
     }
 }
 @_spi(WinRTInternal)
+public class DynamicOverflowItemsChangingEventArgsMaker: MakeFromAbi {
+    public typealias SwiftType = DynamicOverflowItemsChangingEventArgs
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return DynamicOverflowItemsChangingEventArgs(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
 public class FlyoutMaker: MakeFromAbi {
     public typealias SwiftType = Flyout
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
@@ -2665,6 +2873,13 @@ public class FocusEngagedEventArgsMaker: MakeFromAbi {
     public typealias SwiftType = FocusEngagedEventArgs
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
         return FocusEngagedEventArgs(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class FontIconMaker: MakeFromAbi {
+    public typealias SwiftType = FontIcon
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return FontIcon(fromAbi: abi)
     }
 }
 @_spi(WinRTInternal)
@@ -3155,6 +3370,13 @@ public class StyleSelectorMaker: MakeFromAbi {
     public typealias SwiftType = StyleSelector
     public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
         return StyleSelector(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class SymbolIconMaker: MakeFromAbi {
+    public typealias SwiftType = SymbolIcon
+    public static func from(abi: WindowsFoundation.IInspectable) -> SwiftType {
+        return SymbolIcon(fromAbi: abi)
     }
 }
 @_spi(WinRTInternal)

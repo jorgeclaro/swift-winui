@@ -1320,6 +1320,93 @@ fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CContr
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement: WindowsFoundation.IID {
+    .init(Data1: 0x6f5cb2b8, Data2: 0x4e7e, Data3: 0x5b59, Data4: ( 0xb5,0x8e,0x39,0x81,0xe7,0x82,0x65,0x5a ))// 6f5cb2b8-4e7e-5b59-b58e-3981e782655a
+}
+
+internal var __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterable`1<Microsoft.UI.Xaml.Controls.ICommandBarElement>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    First: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.first()
+        let resultWrapper = WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge>
+public class IIterableICommandBarElement: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement }
+
+    open func First() throws -> WindowsFoundation.AnyIIterator<WinUI.AnyICommandBarElement?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.First(pThis, &resultAbi))
+            }
+        }
+        return WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.unwrapFrom(abi: result)
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement
+    internal typealias SwiftABI = IIterableICommandBarElement
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterable<WinUI.AnyICommandBarElement?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl : IIterable, AbiInterfaceImpl {
+    typealias T = WinUI.AnyICommandBarElement?
+    typealias Bridge = __x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterable-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.AnyICommandBarElement?>? {
+        try! _default.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CMenuBarItem: WindowsFoundation.IID {
     .init(Data1: 0x941f98ad, Data2: 0xab6e, Data3: 0x5caa, Data4: ( 0xa7,0x76,0x83,0xe4,0x2c,0xa7,0xa0,0x6d ))// 941f98ad-ab6e-5caa-a776-83e42ca7a06d
 }
@@ -5797,6 +5884,158 @@ fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CContr
 
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     fileprivate var current : WinUI.GroupStyle? {
+        get { try! _default.get_Current() }
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
+    fileprivate var hasCurrent : Bool {
+        get { try! _default.get_HasCurrent() }
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement: WindowsFoundation.IID {
+    .init(Data1: 0x904c0b66, Data2: 0x6b98, Data3: 0x5276, Data4: ( 0xab,0xc2,0x77,0x5f,0xfb,0x48,0x9f,0xf9 ))// 904c0b66-6b98-5276-abc2-775ffb489ff9
+}
+
+internal var __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 3).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        $1!.pointee = 3
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IIterator`1<Microsoft.UI.Xaml.Controls.ICommandBarElement>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    get_Current: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.current
+        let resultWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    get_HasCurrent: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.hasCurrent
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    MoveNext: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.moveNext()
+        $1?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        var items: [WinUI.AnyICommandBarElement?] = .from(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self, abi: (count: $1, start: $2))
+        let result = __unwrapped__instance.getMany(&items)
+        items.fill(abi: $2, abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self)
+        $3?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge>
+public class IIteratorICommandBarElement: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement }
+
+    open func get_Current() throws -> WinUI.AnyICommandBarElement? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_Current(pThis, &resultAbi))
+            }
+        }
+        return __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: result)
+    }
+
+    open func get_HasCurrent() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_HasCurrent(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func MoveNext() throws -> Bool {
+        var result: boolean = 0
+        _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.MoveNext(pThis, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ items: inout [WinUI.AnyICommandBarElement?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self, abi: _items)
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement
+    internal typealias SwiftABI = IIteratorICommandBarElement
+    internal typealias SwiftProjection = WindowsFoundation.AnyIIterator<WinUI.AnyICommandBarElement?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl : IIterator, AbiInterfaceImpl {
+    typealias T = WinUI.AnyICommandBarElement?
+    typealias Bridge = __x_ABI_C__FIIterator_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
+    fileprivate func moveNext() -> Bool {
+        try! _default.MoveNext()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    fileprivate func getMany(_ items: inout [WinUI.AnyICommandBarElement?]) -> UInt32 {
+        try! _default.GetMany(&items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
+    fileprivate var current : WinUI.AnyICommandBarElement? {
         get { try! _default.get_Current() }
     }
 
@@ -12173,6 +12412,214 @@ fileprivate class __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml
     public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
 }
 
+private var IID___x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement: WindowsFoundation.IID {
+    .init(Data1: 0x4fc6ce4e, Data2: 0x919e, Data3: 0x5b90, Data4: ( 0xa0,0x71,0x50,0x7b,0x7c,0xc3,0x27,0x3c ))// 4fc6ce4e-919e-5b90-a071-507b7cc3273c
+}
+
+internal var __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable: __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 5).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        iids[4] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        $1!.pointee = 5
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IObservableVector`1<Microsoft.UI.Xaml.Controls.ICommandBarElement>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    add_VectorChanged: {
+        guard let __unwrapped__instance = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        guard let vhnd = WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.unwrapFrom(abi: ComPtr($1)) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.vectorChanged.addHandler(vhnd)
+        $2?.initialize(to: .from(swift: result))
+        return S_OK
+    },
+
+    remove_VectorChanged: {
+        guard let __unwrapped__instance = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let token: EventRegistrationToken = $1
+        __unwrapped__instance.vectorChanged.removeHandler(token)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge>
+public class IObservableVectorICommandBarElement: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement }
+
+    open func add_VectorChanged(_ vhnd: VectorChangedEventHandler<WinUI.AnyICommandBarElement?>?) throws -> EventRegistrationToken {
+        var result: EventRegistrationToken = .init()
+        let vhndWrapper = WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper(vhnd)
+        let _vhnd = try! vhndWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.add_VectorChanged(pThis, _vhnd, &result))
+        }
+        return result
+    }
+
+    open func remove_VectorChanged(_ token: EventRegistrationToken) throws {
+        _ = try perform(as: __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.remove_VectorChanged(pThis, token))
+        }
+    }
+
+}
+
+internal enum __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement
+    internal typealias SwiftABI = IObservableVectorICommandBarElement
+    internal typealias SwiftProjection = WindowsFoundation.AnyIObservableVector<WinUI.AnyICommandBarElement?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl : IObservableVector, AbiInterfaceImpl {
+    typealias T = WinUI.AnyICommandBarElement?
+    typealias Bridge = __x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+        set(newValue) {
+            setAt(UInt32(position), newValue)
+        }
+    }
+
+    func removeLast() {
+        removeAtEnd()
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged)
+    fileprivate lazy var vectorChanged : Event<VectorChangedEventHandler<ICommandBarElement?>> = {
+      .init(
+        add: { [weak self] in
+          guard let this = self?._default else { return .init() }
+          return try! this.add_VectorChanged($0)
+        },
+        remove: { [weak self] in
+         try? self?._default.remove_VectorChanged($0)
+       }
+      )
+    }()
+
+    private lazy var _IVector: IVectorICommandBarElement! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.AnyICommandBarElement? {
+        try! _IVector.GetAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.getview)
+    fileprivate func getView() -> WindowsFoundation.AnyIVectorView<WinUI.AnyICommandBarElement?>? {
+        try! _IVector.GetView()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.AnyICommandBarElement?, _ index: inout UInt32) -> Bool {
+        try! _IVector.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.setat)
+    fileprivate func setAt(_ index: UInt32, _ value: WinUI.AnyICommandBarElement?) {
+        try! _IVector.SetAt(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.insertat)
+    fileprivate func insertAt(_ index: UInt32, _ value: WinUI.AnyICommandBarElement?) {
+        try! _IVector.InsertAt(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.removeat)
+    fileprivate func removeAt(_ index: UInt32) {
+        try! _IVector.RemoveAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.append)
+    fileprivate func append(_ value: WinUI.AnyICommandBarElement?) {
+        try! _IVector.Append(value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.removeatend)
+    fileprivate func removeAtEnd() {
+        try! _IVector.RemoveAtEnd()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.clear)
+    fileprivate func clear() {
+        try! _IVector.Clear()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WinUI.AnyICommandBarElement?]) -> UInt32 {
+        try! _IVector.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.replaceall)
+    fileprivate func replaceAll(_ items: [WinUI.AnyICommandBarElement?]) {
+        try! _IVector.ReplaceAll(items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _IVector.get_Size() }
+    }
+
+    private lazy var _IIterable: IIterableICommandBarElement! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iobservablevector-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.AnyICommandBarElement?>? {
+        try! _IIterable.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
 private var IID___x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
     .init(Data1: 0x95f51f05, Data2: 0xf191, Data3: 0x5bc6, Data4: ( 0x86,0xb0,0x2a,0x2a,0x4d,0x4f,0xfa,0xb1 ))// 95f51f05-f191-5bc6-86b0-2a2a4d4ffab1
 }
@@ -14030,6 +14477,193 @@ fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CCon
     private lazy var _IIterable: IIterableGroupStyle! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.GroupStyle?>? {
+        try! _IIterable.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement: WindowsFoundation.IID {
+    .init(Data1: 0x8d22222f, Data2: 0xbd3e, Data3: 0x519f, Data4: ( 0xb6,0x5d,0xfd,0x2a,0xe2,0x21,0x45,0x82 ))// 8d22222f-bd3e-519f-b65d-fd2ae2214582
+}
+
+internal var __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVectorView`1<Microsoft.UI.Xaml.Controls.ICommandBarElement>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        let resultWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(result)
+        resultWrapper?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.AnyICommandBarElement? = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WinUI.AnyICommandBarElement?] = .from(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge>
+public class IVectorViewICommandBarElement: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement }
+
+    open func GetAt(_ index: UInt32) throws -> WinUI.AnyICommandBarElement? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: result)
+    }
+
+    open func get_Size() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    open func IndexOf(_ value: WinUI.AnyICommandBarElement?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        let valueWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(value)
+        let _value = try! valueWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, _value, &index, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WinUI.AnyICommandBarElement?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self, abi: _items)
+        }
+        return result
+    }
+
+}
+
+internal enum __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement
+    internal typealias SwiftABI = IVectorViewICommandBarElement
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVectorView<WinUI.AnyICommandBarElement?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl : IVectorView, AbiInterfaceImpl {
+    typealias T = WinUI.AnyICommandBarElement?
+    typealias Bridge = __x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+    }
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.AnyICommandBarElement? {
+        try! _default.GetAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.AnyICommandBarElement?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WinUI.AnyICommandBarElement?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_Size() }
+    }
+
+    private lazy var _IIterable: IIterableICommandBarElement! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.AnyICommandBarElement?>? {
         try! _IIterable.First()
     }
 
@@ -23199,6 +23833,358 @@ fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControl
     private lazy var _IIterable: IIterableGroupStyle! = getInterfaceForCaching()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
     fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.GroupStyle?>? {
+        try! _IIterable.First()
+    }
+
+    public func queryInterface(_ iid: WindowsFoundation.IID) -> IUnknownRef? { nil }
+}
+
+private var IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement: WindowsFoundation.IID {
+    .init(Data1: 0x45a61863, Data2: 0x77e4, Data3: 0x5fa9, Data4: ( 0xbc,0x53,0x30,0xe5,0xfe,0x10,0x4f,0xb8 ))// 45a61863-77e4-5fa9-bc53-30e5fe104fb8
+}
+
+internal var __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVtbl = .init(
+    QueryInterface: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.addRef($0) },
+    Release: { __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.release($0) },
+    GetIids: {
+        let size = MemoryLayout<WindowsFoundation.IID>.size
+        let iids = CoTaskMemAlloc(UInt64(size) * 4).assumingMemoryBound(to: WindowsFoundation.IID.self)
+        iids[0] = IUnknown.IID
+        iids[1] = IInspectable.IID
+        iids[2] = WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        iids[3] = WinUI.__x_ABI_C__FIIterable_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.IID
+        $1!.pointee = 4
+        $2!.pointee = iids
+        return S_OK
+    },
+
+    GetRuntimeClassName: {
+        _ = $0
+        let hstring = try! HString("Windows.Foundation.Collections.IVector`1<Microsoft.UI.Xaml.Controls.ICommandBarElement>").detach()
+        $1!.pointee = hstring
+        return S_OK
+    },
+
+    GetTrustLevel: {
+        _ = $0
+        $1!.pointee = TrustLevel(rawValue: 0)
+        return S_OK
+    },
+
+    GetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let result = __unwrapped__instance.getAt(index)
+        let resultWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(result)
+        resultWrapper?.copyTo($2)
+        return S_OK
+    },
+
+    get_Size: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.size
+        $1?.initialize(to: result)
+        return S_OK
+    },
+
+    GetView: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let result = __unwrapped__instance.getView()
+        let resultWrapper = WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper(result)
+        resultWrapper?.copyTo($1)
+        return S_OK
+    },
+
+    IndexOf: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.AnyICommandBarElement? = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: ComPtr($1))
+        var index: UInt32 = 0
+        let result = __unwrapped__instance.indexOf(value, &index)
+        $2?.initialize(to: index)
+        $3?.initialize(to: .init(from: result))
+        return S_OK
+    },
+
+    SetAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let value: WinUI.AnyICommandBarElement? = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: ComPtr($2))
+        __unwrapped__instance.setAt(index, value)
+        return S_OK
+    },
+
+    InsertAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        let value: WinUI.AnyICommandBarElement? = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: ComPtr($2))
+        __unwrapped__instance.insertAt(index, value)
+        return S_OK
+    },
+
+    RemoveAt: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let index: UInt32 = $1
+        __unwrapped__instance.removeAt(index)
+        return S_OK
+    },
+
+    Append: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let value: WinUI.AnyICommandBarElement? = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: ComPtr($1))
+        __unwrapped__instance.append(value)
+        return S_OK
+    },
+
+    RemoveAtEnd: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        __unwrapped__instance.removeAtEnd()
+        return S_OK
+    },
+
+    Clear: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        __unwrapped__instance.clear()
+        return S_OK
+    },
+
+    GetMany: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let startIndex: UInt32 = $1
+        var items: [WinUI.AnyICommandBarElement?] = .from(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self, abi: (count: $2, start: $3))
+        let result = __unwrapped__instance.getMany(startIndex, &items)
+        items.fill(abi: $3, abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self)
+        $4?.initialize(to: result)
+        return S_OK
+    },
+
+    ReplaceAll: {
+        guard let __unwrapped__instance = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+        let items: [WinUI.AnyICommandBarElement?] = .from(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self, abi: (count: $1, start: $2))
+        __unwrapped__instance.replaceAll(items)
+        return S_OK
+    }
+)
+typealias __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge>
+public class IVectorICommandBarElement: WindowsFoundation.IInspectable {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement }
+
+    open func GetAt(_ index: UInt32) throws -> WinUI.AnyICommandBarElement? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetAt(pThis, index, &resultAbi))
+            }
+        }
+        return __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper.unwrapFrom(abi: result)
+    }
+
+    open func get_Size() throws -> UInt32 {
+        var result: UINT32 = 0
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.get_Size(pThis, &result))
+        }
+        return result
+    }
+
+    open func GetView() throws -> WindowsFoundation.AnyIVectorView<WinUI.AnyICommandBarElement?>? {
+        let (result) = try ComPtrs.initialize { resultAbi in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetView(pThis, &resultAbi))
+            }
+        }
+        return WinUI.__x_ABI_C__FIVectorView_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.unwrapFrom(abi: result)
+    }
+
+    open func IndexOf(_ value: WinUI.AnyICommandBarElement?, _ index: inout UInt32) throws -> Bool {
+        var result: boolean = 0
+        let valueWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(value)
+        let _value = try! valueWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.IndexOf(pThis, _value, &index, &result))
+        }
+        return .init(from: result)
+    }
+
+    open func SetAt(_ index: UInt32, _ value: WinUI.AnyICommandBarElement?) throws {
+        let valueWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(value)
+        let _value = try! valueWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.SetAt(pThis, index, _value))
+        }
+    }
+
+    open func InsertAt(_ index: UInt32, _ value: WinUI.AnyICommandBarElement?) throws {
+        let valueWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(value)
+        let _value = try! valueWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.InsertAt(pThis, index, _value))
+        }
+    }
+
+    open func RemoveAt(_ index: UInt32) throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAt(pThis, index))
+        }
+    }
+
+    open func Append(_ value: WinUI.AnyICommandBarElement?) throws {
+        let valueWrapper = __ABI_Microsoft_UI_Xaml_Controls.ICommandBarElementWrapper(value)
+        let _value = try! valueWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Append(pThis, _value))
+        }
+    }
+
+    open func RemoveAtEnd() throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.RemoveAtEnd(pThis))
+        }
+    }
+
+    open func Clear() throws {
+        _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Clear(pThis))
+        }
+    }
+
+    open func GetMany(_ startIndex: UInt32, _ items: inout [WinUI.AnyICommandBarElement?]) throws -> UInt32 {
+        var result: UINT32 = 0
+        try items.toABI(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.GetMany(pThis, startIndex, _items.count, _items.start, &result))
+            }
+        items = .from(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self, abi: _items)
+        }
+        return result
+    }
+
+    open func ReplaceAll(_ items: [WinUI.AnyICommandBarElement?]) throws {
+        try items.toABI(abiBridge: __IMPL_Microsoft_UI_Xaml_Controls.ICommandBarElementBridge.self) { _items in
+            _ = try perform(as: __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.ReplaceAll(pThis, _items.count, _items.start))
+            }
+        }
+    }
+
+}
+
+internal enum __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge : AbiInterfaceBridge {
+    internal typealias CABI = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement
+    internal typealias SwiftABI = IVectorICommandBarElement
+    internal typealias SwiftProjection = WindowsFoundation.AnyIVector<WinUI.AnyICommandBarElement?>
+    internal static func from(abi: ComPtr<CABI>?) -> SwiftProjection? {
+        guard let abi = abi else { return nil }
+        return __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl(abi)
+    }
+
+    internal static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &__x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable) { $0 }
+        return .init(lpVtbl: vtblPtr)
+    }
+}
+
+fileprivate class __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementImpl : IVector, AbiInterfaceImpl {
+    typealias T = WinUI.AnyICommandBarElement?
+    typealias Bridge = __x_ABI_C__FIVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge
+    let _default: Bridge.SwiftABI
+    init(_ fromAbi: ComPtr<Bridge.CABI>) {
+        _default = Bridge.SwiftABI(fromAbi)
+    }
+
+    // MARK: Collection
+    typealias Element = T
+    var startIndex: Int { 0 }
+    var endIndex: Int { Int(size) }
+    func index(after i: Int) -> Int {
+        i+1
+    }
+
+    func index(of: Element) -> Int? {
+        var index: UInt32 = 0
+        let result = indexOf(of, &index)
+        guard result else { return nil }
+        return Int(index)
+    }
+    var count: Int { Int(size) }
+
+
+    subscript(position: Int) -> Element {
+        get {
+            getAt(UInt32(position))
+        }
+        set(newValue) {
+            setAt(UInt32(position), newValue)
+        }
+    }
+
+    func removeLast() {
+        removeAtEnd()
+    }
+
+    // MARK: WinRT
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getat)
+    fileprivate func getAt(_ index: UInt32) -> WinUI.AnyICommandBarElement? {
+        try! _default.GetAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getview)
+    fileprivate func getView() -> WindowsFoundation.AnyIVectorView<WinUI.AnyICommandBarElement?>? {
+        try! _default.GetView()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.indexof)
+    fileprivate func indexOf(_ value: WinUI.AnyICommandBarElement?, _ index: inout UInt32) -> Bool {
+        try! _default.IndexOf(value, &index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.setat)
+    fileprivate func setAt(_ index: UInt32, _ value: WinUI.AnyICommandBarElement?) {
+        try! _default.SetAt(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.insertat)
+    fileprivate func insertAt(_ index: UInt32, _ value: WinUI.AnyICommandBarElement?) {
+        try! _default.InsertAt(index, value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeat)
+    fileprivate func removeAt(_ index: UInt32) {
+        try! _default.RemoveAt(index)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.append)
+    fileprivate func append(_ value: WinUI.AnyICommandBarElement?) {
+        try! _default.Append(value)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.removeatend)
+    fileprivate func removeAtEnd() {
+        try! _default.RemoveAtEnd()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.clear)
+    fileprivate func clear() {
+        try! _default.Clear()
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getmany)
+    fileprivate func getMany(_ startIndex: UInt32, _ items: inout [WinUI.AnyICommandBarElement?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.replaceall)
+    fileprivate func replaceAll(_ items: [WinUI.AnyICommandBarElement?]) {
+        try! _default.ReplaceAll(items)
+    }
+
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.size)
+    fileprivate var size : UInt32 {
+        get { try! _default.get_Size() }
+    }
+
+    private lazy var _IIterable: IIterableICommandBarElement! = getInterfaceForCaching()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.first)
+    fileprivate func first() -> WindowsFoundation.AnyIIterator<WinUI.AnyICommandBarElement?>? {
         try! _IIterable.First()
     }
 
@@ -33265,6 +34251,61 @@ internal class __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__
         return handler
     }
 }
+private var IID___x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement: WindowsFoundation.IID {
+    .init(Data1: 0x71ea1253, Data2: 0xdd9c, Data3: 0x5509, Data4: ( 0xac,0xed,0x2e,0xb0,0x45,0x57,0x1d,0x53 ))// 71ea1253-dd9c-5509-aced-2eb045571d53
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVTable: __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementVtbl = .init(
+    QueryInterface: { __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.addRef($0) },
+    Release: { __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WindowsFoundation.AnyIObservableVector<WinUI.AnyICommandBarElement?>? = WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper.unwrapFrom(abi: ComPtr($1))
+            let event: WindowsFoundation.AnyIVectorChangedEventArgs? = __ABI_Windows_Foundation_Collections.IVectorChangedEventArgsWrapper.unwrapFrom(abi: ComPtr($2))
+            try __unwrapped__instance(sender, event)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge>
+public class VectorChangedEventHandlerICommandBarElement: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement }
+
+    open func Invoke(_ sender: WindowsFoundation.AnyIObservableVector<WinUI.AnyICommandBarElement?>?, _ event: WindowsFoundation.AnyIVectorChangedEventArgs?) throws {
+        let senderWrapper = WinUI.__x_ABI_C__FIObservableVector_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementWrapper(sender)
+        let _sender = try! senderWrapper?.toABI { $0 }
+        let eventWrapper = __ABI_Windows_Foundation_Collections.IVectorChangedEventArgsWrapper(event)
+        let _event = try! eventWrapper?.toABI { $0 }
+        _ = try perform(as: __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, _sender, _event))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElementBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.VectorChangedEventHandler<WinUI.AnyICommandBarElement?>
+    internal typealias CABI = __x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CControls__CICommandBarElement
+    internal typealias SwiftABI = WinUI.VectorChangedEventHandlerICommandBarElement
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, event) in
+            try _default.Invoke(sender, event)
+        }
+        return handler
+    }
+}
 private var IID___x_ABI_C__FVectorChangedEventHandler_1___x_ABI_CMicrosoft__CUI__CXaml__CMedia__CGradientStop: WindowsFoundation.IID {
     .init(Data1: 0x6dbf1655, Data2: 0x6d00, Data3: 0x5c55, Data4: ( 0x99,0x3c,0xb1,0xa3,0x84,0xfa,0x75,0xce ))// 6dbf1655-6d00-5c55-993c-b1a384fa75ce
 }
@@ -36564,6 +37605,57 @@ internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__
     internal typealias Handler = WindowsFoundation.TypedEventHandler<WinUI.ComboBox?, WinUI.ComboBoxTextSubmittedEventArgs?>
     internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CComboBox___x_ABI_CMicrosoft__CUI__CXaml__CControls__CComboBoxTextSubmittedEventArgs
     internal typealias SwiftABI = WinUI.TypedEventHandlerComboBox_ComboBoxTextSubmittedEventArgs
+
+    internal static func from(abi: ComPtr<CABI>?) -> Handler? {
+        guard let abi = abi else { return nil }
+        let _default = SwiftABI(abi)
+        let handler: Handler = { (sender, args) in
+            try _default.Invoke(sender, args)
+        }
+        return handler
+    }
+}
+private var IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgs: WindowsFoundation.IID {
+    .init(Data1: 0xa970a020, Data2: 0xf829, Data3: 0x5452, Data4: ( 0x85,0xe1,0xf7,0x72,0x32,0xdc,0x7f,0x80 ))// a970a020-f829-5452-85e1-f77232dc7f80
+}
+
+internal extension WinRTDelegateBridge where CABI == __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgs {
+    static func makeAbi() -> CABI {
+        let vtblPtr = withUnsafeMutablePointer(to: &WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsVTable) { $0 }
+        return .init(lpVtbl:vtblPtr)
+    }
+}
+
+internal var __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsVTable: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsVtbl = .init(
+    QueryInterface: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsWrapper.queryInterface($0, $1, $2) },
+    AddRef: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsWrapper.addRef($0) },
+    Release: { __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsWrapper.release($0) },
+    Invoke: {
+        do {
+            guard let __unwrapped__instance = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsWrapper.tryUnwrapFrom(raw: $0) else { return E_INVALIDARG }
+            let sender: WinUI.CommandBar? = __IMPL_Microsoft_UI_Xaml_Controls.CommandBarBridge.from(abi: ComPtr($1))
+            let args: WinUI.DynamicOverflowItemsChangingEventArgs? = __IMPL_Microsoft_UI_Xaml_Controls.DynamicOverflowItemsChangingEventArgsBridge.from(abi: ComPtr($2))
+            try __unwrapped__instance(sender, args)
+            return S_OK
+        } catch { return failWith(error: error) }
+    }
+)
+typealias __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsWrapper = InterfaceWrapperBase<WinUI.__x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsBridge>
+public class TypedEventHandlerCommandBar_DynamicOverflowItemsChangingEventArgs: WindowsFoundation.IUnknown {
+    override public class var IID: WindowsFoundation.IID { IID___x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgs }
+
+    open func Invoke(_ sender: WinUI.CommandBar?, _ args: WinUI.DynamicOverflowItemsChangingEventArgs?) throws {
+        _ = try perform(as: __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgs.self) { pThis in
+            try CHECKED(pThis.pointee.lpVtbl.pointee.Invoke(pThis, RawPointer(sender), RawPointer(args)))
+        }
+    }
+
+}
+
+internal class __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgsBridge : WinRTDelegateBridge {
+    internal typealias Handler = WindowsFoundation.TypedEventHandler<WinUI.CommandBar?, WinUI.DynamicOverflowItemsChangingEventArgs?>
+    internal typealias CABI = __x_ABI_C__FITypedEventHandler_2___x_ABI_CMicrosoft__CUI__CXaml__CControls__CCommandBar___x_ABI_CMicrosoft__CUI__CXaml__CControls__CDynamicOverflowItemsChangingEventArgs
+    internal typealias SwiftABI = WinUI.TypedEventHandlerCommandBar_DynamicOverflowItemsChangingEventArgs
 
     internal static func from(abi: ComPtr<CABI>?) -> Handler? {
         guard let abi = abi else { return nil }

@@ -5,6 +5,14 @@ import Foundation
 @_spi(WinRTInternal) @_spi(WinRTImplements) import WindowsFoundation
 import CWinRT
 
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings: WindowsFoundation.IID {
+    .init(Data1: 0x6FC13525, Data2: 0xBF03, Data3: 0x5190, Data4: ( 0xA1,0xD5,0xEB,0xD6,0xA1,0xBC,0xB6,0xB4 ))// 6FC13525-BF03-5190-A1D5-EBD6A1BCB6B4
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings: WindowsFoundation.IID {
+    .init(Data1: 0xFE60E73F, Data2: 0x9A52, Data3: 0x5E0A, Data4: ( 0xB7,0x38,0x42,0x6F,0x97,0xD0,0x97,0x68 ))// FE60E73F-9A52-5E0A-B738-426F97D09768
+}
+
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIButtonBase: WindowsFoundation.IID {
     .init(Data1: 0x65714269, Data2: 0x2473, Data3: 0x5327, Data4: ( 0xA6,0x52,0x0E,0xA6,0xBC,0xE7,0xF4,0x03 ))// 65714269-2473-5327-A652-0EA6BCE7F403
 }
@@ -23,6 +31,10 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICalendarVie
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings: WindowsFoundation.IID {
     .init(Data1: 0xF2DC5E7F, Data2: 0x8D3F, Data3: 0x5C20, Data4: ( 0xB3,0x56,0xAF,0x6F,0x1F,0xF8,0x24,0x2A ))// F2DC5E7F-8D3F-5C20-B356-AF6F1FF8242A
+}
+
+private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings: WindowsFoundation.IID {
+    .init(Data1: 0xAE9535F6, Data2: 0x1678, Data3: 0x5066, Data4: ( 0x90,0xBF,0x14,0x7A,0xA6,0x10,0xC5,0xDD ))// AE9535F6-1678-5066-90BF-147AA610C5DD
 }
 
 private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIFlyoutBase: WindowsFoundation.IID {
@@ -259,6 +271,104 @@ private var IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIRangeBaseVa
 
 @_spi(WinRTInternal)
 public enum __ABI_Microsoft_UI_Xaml_Controls_Primitives {
+    public class IAppBarButtonTemplateSettings: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings }
+
+        public func get_KeyboardAcceleratorTextMinWidth() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarButtonTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_KeyboardAcceleratorTextMinWidth(pThis, &value))
+            }
+            return value
+        }
+
+    }
+
+    public class IAppBarTemplateSettings: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings }
+
+        public func get_ClipRect() throws -> WindowsFoundation.Rect {
+            var value: __x_ABI_CWindows_CFoundation_CRect = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_ClipRect(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        public func get_CompactVerticalDelta() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_CompactVerticalDelta(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_CompactRootMargin() throws -> WinUI.Thickness {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CThickness = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_CompactRootMargin(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        public func get_MinimalVerticalDelta() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinimalVerticalDelta(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_MinimalRootMargin() throws -> WinUI.Thickness {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CThickness = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_MinimalRootMargin(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        public func get_HiddenVerticalDelta() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_HiddenVerticalDelta(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_HiddenRootMargin() throws -> WinUI.Thickness {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CThickness = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_HiddenRootMargin(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        public func get_NegativeCompactVerticalDelta() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_NegativeCompactVerticalDelta(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_NegativeMinimalVerticalDelta() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_NegativeMinimalVerticalDelta(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_NegativeHiddenVerticalDelta() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIAppBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_NegativeHiddenVerticalDelta(pThis, &value))
+            }
+            return value
+        }
+
+    }
+
     public class IButtonBase: WindowsFoundation.IInspectable {
         override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIButtonBase }
 
@@ -576,6 +686,107 @@ public enum __ABI_Microsoft_UI_Xaml_Controls_Primitives {
             var value: DOUBLE = 0.0
             _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CIComboBoxTemplateSettings.self) { pThis in
                 try CHECKED(pThis.pointee.lpVtbl.pointee.get_DropDownContentMinWidth(pThis, &value))
+            }
+            return value
+        }
+
+    }
+
+    public class ICommandBarTemplateSettings: WindowsFoundation.IInspectable {
+        override public class var IID: WindowsFoundation.IID { IID___x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings }
+
+        public func get_ContentHeight() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_ContentHeight(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentClipRect() throws -> WindowsFoundation.Rect {
+            var value: __x_ABI_CWindows_CFoundation_CRect = .init()
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentClipRect(pThis, &value))
+            }
+            return .from(abi: value)
+        }
+
+        public func get_OverflowContentMinWidth() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentMinWidth(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentMaxWidth() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentMaxWidth(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentMaxHeight() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentMaxHeight(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentHorizontalOffset() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentHorizontalOffset(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentHeight() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentHeight(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_NegativeOverflowContentHeight() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_NegativeOverflowContentHeight(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_EffectiveOverflowButtonVisibility() throws -> WinUI.Visibility {
+            var value: __x_ABI_CMicrosoft_CUI_CXaml_CVisibility = .init(0)
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_EffectiveOverflowButtonVisibility(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentCompactYTranslation() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentCompactYTranslation(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentMinimalYTranslation() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentMinimalYTranslation(pThis, &value))
+            }
+            return value
+        }
+
+        public func get_OverflowContentHiddenYTranslation() throws -> Double {
+            var value: DOUBLE = 0.0
+            _ = try perform(as: __x_ABI_CMicrosoft_CUI_CXaml_CControls_CPrimitives_CICommandBarTemplateSettings.self) { pThis in
+                try CHECKED(pThis.pointee.lpVtbl.pointee.get_OverflowContentHiddenYTranslation(pThis, &value))
             }
             return value
         }
