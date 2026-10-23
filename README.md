@@ -22,9 +22,9 @@ The versions are set in the `projections.json` files under `Support`. Keep them 
 
 ### Branches and tags
 
-One branch holds one Windows App SDK version: `winappsdk-1.7` targets 1.7. A change that every version needs (a fix, a new binding) is made on one branch and cherry-picked to the others. Tags are named `winappsdk-<major.minor>-r<n>`: the SDK version, then the revision of this repository's own changes on top of it. To depend on a version, pin a tag or a revision.
+`main` targets the newest Windows App SDK version here (1.7). Older versions that are still kept live on branches named `winappsdk-<major.minor>`, cut from `main` at the moment it moved on. A change that every kept version needs (a fix, a new binding) is made on `main` and cherry-picked to those branches. Tags are named `winappsdk-<major.minor>-r<n>`: the SDK version, then the revision of this repository's own changes on top of it (`winappsdk-1.7-r1` is the first). To depend on a version, pin a tag's commit or a revision.
 
-To move to a newer Windows App SDK, branch from the newest version's branch, change the version in each `projections.json` (and in `Bundler.toml` and the runtime links below), run each `Support/*/generate-bindings.ps1`, then build and fix what the newer SDK changed.
+To move to a newer Windows App SDK, first keep the current one: `git branch winappsdk-1.7`, from `main`. Then on `main` change the version in each `projections.json` (and in `Bundler.toml`, `Support/WinAppSDK/packages.config` and the runtime links below), run each `Support/*/generate-bindings.ps1`, then build and fix what the newer SDK changed.
 
 ## Dependencies
 
