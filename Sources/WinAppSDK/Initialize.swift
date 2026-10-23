@@ -45,6 +45,12 @@ enum InitializationError: LocalizedError {
 ///    }
 /// ```
 public class WindowsAppRuntimeInitializer {
+    /// Optional. Asked for the full path of `Microsoft.WindowsAppRuntime.Bootstrap.dll` when it is not in the
+    /// `swift-winui_CWinAppSDK.bundle` folder next to the executable, so an app can carry the DLL inside its
+    /// executable and provide it from there. The app is responsible for the path being a file it trusts. Set it
+    /// before `SwiftApplication.main()` runs. Return nil to say there is none.
+    public static var bootstrapperPathProvider: (() -> String?)?
+
     // TODO: Figure out how to properly link against delayimp.lib so that we can delay load the bootstrap dll.
     private typealias pfnMddBootstrapInitialize2 = @convention(c) (UInt32, PCWSTR?, PACKAGE_VERSION, MddBootstrapInitializeOptions) -> HRESULT
     private typealias pfnMddBootstrapShutdown = @convention(c) () -> Void
@@ -76,19 +82,27 @@ public class WindowsAppRuntimeInitializer {
             "swift-winui_CWinAppSDK.resources\\Microsoft.WindowsAppRuntime.Bootstrap.dll",
             "swift-winui_CWinAppSDK.bundle\\Microsoft.WindowsAppRuntime.Bootstrap.dll",
         ]
-        guard
-            let libraryPath = libraryPaths.first(where: { libraryPath in
-                FileManager.default.fileExists(
-                    atPath: appDirectory.appendingPathComponent(libraryPath).path
-                )
-            })
-        else {
+        let dll: HMODULE
+        if let libraryPath = libraryPaths.first(where: { libraryPath in
+            FileManager.default.fileExists(
+                atPath: appDirectory.appendingPathComponent(libraryPath).path
+            )
+        }) {
+            guard let loaded = LoadLibraryA(libraryPath) else {
+                print("Failed to load bootstrapper dll at \(libraryPath)")
+                throw InitializationError.failedToLoadBootstrapper(libraryPath)
+            }
+            dll = loaded
+        } else if let providedPath = Self.bootstrapperPathProvider?() {
+            // An absolute path, searched only in the DLL's own folder and the system folders.
+            guard let loaded = LoadLibraryExA(providedPath, nil, DWORD(LOAD_LIBRARY_SEARCH_DEFAULT_DIRS | LOAD_LIBRARY_SEARCH_DLL_LOAD_DIR)) else {
+                print("Failed to load bootstrapper dll at \(providedPath)")
+                throw InitializationError.failedToLoadBootstrapper(providedPath)
+            }
+            dll = loaded
+        } else {
             print("Expected to find bootstrapper dll at one of \(libraryPaths)")
             throw InitializationError.missingBootstrapper(libraryPaths)
-        }
-        guard let dll = LoadLibraryA(libraryPath) else {
-            print("Failed to load bootstrapper dll at \(libraryPath)")
-            throw InitializationError.failedToLoadBootstrapper(libraryPath)
         }
         bootstrapperDll = dll
         let roInitParam = switch threadingModel {
